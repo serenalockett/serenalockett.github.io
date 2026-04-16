@@ -1,69 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serena R.A.</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serena Lockett | Thérapeute en relation d'aide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #F5F5F0; color: #4A4A4A; }
+        .bg-sage { background-color: #94A390; }
+        .text-sage { color: #94A390; }
+        .border-sage { border-color: #94A390; }
+    </style>
 </head>
-
 <body>
 
-  <header class="header">
-    <div class="logo">Serena R.A.</div>
-
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-      <a class="btn" href="https://calendar.google.com" target="_blank">Book Now</a>
+    <nav class="flex justify-between items-center p-6 max-w-6xl mx-auto">
+        <div class="font-medium text-lg">Serena Lockett, R.A.</div>
+        <div class="space-x-8 uppercase text-xs tracking-widest hidden md:flex">
+            <a href="#about" class="hover:text-sage">À Propos</a>
+            <a href="#services" class="hover:text-sage">Services</a>
+            <a href="#contact" class="hover:text-sage border-b border-black">Contact</a>
+            <a href="#booking" class="bg-sage text-white px-4 py-2 rounded-full">Rendez-vous</a>
+        </div>
     </nav>
-  </header>
 
-  <section class="hero">
-    <h1>Support for growth, clarity, and healing</h1>
-    <p>A grounded and supportive space for your personal journey.</p>
-    <a class="btn" href="https://calendar.google.com" target="_blank">Book a Session</a>
-  </section>
+    <header class="relative h-[60vh] flex items-center justify-start px-12 bg-cover bg-center" style="background-image: url('teacup.jpg');">
+        <div class="bg-white/40 p-8 rounded-lg backdrop-blur-sm">
+            <h1 class="text-3xl font-light italic text-gray-800">Un espace d'écoute,<br>sans jugement.</h1>
+        </div>
+    </header>
 
-  <section id="about" class="section">
-    <h2>About</h2>
-    <p>
-      This practice offers a safe space for reflection, emotional support,
-      and personal development tailored to your needs.
-    </p>
-  </section>
+    <section id="about" class="max-w-5xl mx-auto py-20 px-6 grid md:grid-cols-2 gap-12 items-center">
+        <img src="serena-headshot.jpg" alt="Serena Lockett" class="rounded-2xl shadow-sm">
+        <div>
+            <h2 class="text-2xl mb-2">Serena Lockett, R.A.</h2>
+            <p class="text-sm text-gray-500 mb-6 uppercase tracking-wide">B.A spécialisé en psychologie de l'Université d'Ottawa • Membre RITMA et MARA</p>
+            <h3 class="font-medium text-lg mb-4">Ce qui me tient à coeur</h3>
+            <p class="mb-4 leading-relaxed">Je crois fermement que le soutien en santé mentale ne devrait pas être un luxe. C'est pourquoi j'offre un programme solidaire avec des tarifs adaptés.</p>
+            <p class="leading-relaxed italic">"Au-delà de l'écoute, ce qui m'importe est de vous offrir un espace authentique..."</p>
+        </div>
+    </section>
 
-  <section id="services" class="section">
-    <h2>Services</h2>
+    <section id="services" class="bg-white py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl text-center mb-12">Services</h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-[#F9F9F7] p-8 rounded-xl text-center border border-gray-100">
+                    <h4 class="font-medium">Thérapie individuelle</h4>
+                    <p class="text-2xl my-2">70$</p>
+                    <p class="text-sm text-gray-400">50 min.</p>
+                </div>
+                <div class="bg-[#F9F9F7] p-8 rounded-xl text-center border border-gray-100">
+                    <h4 class="font-medium">Thérapie de couple</h4>
+                    <p class="text-2xl my-2">70$</p>
+                    <p class="text-sm text-gray-400">50 min.</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="#" class="bg-sage text-white px-8 py-4 rounded-full uppercase text-xs tracking-widest hover:bg-opacity-90">Prendre rendez-vous maintenant</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Individual Support</h3>
-        <p>One-on-one sessions focused on personal growth and emotional clarity.</p>
-      </div>
+    <section id="contact" class="max-w-5xl mx-auto py-20 px-6 grid md:grid-cols-2 gap-12">
+        <div>
+            <h2 class="text-3xl mb-8">Contactez-moi</h2>
+            <form action="https://formspree.io/f/YOUR_ID" method="POST" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <input type="text" name="prenom" placeholder="Prénom" class="w-full p-3 rounded-lg border border-gray-200 focus:outline-sage" required>
+                    <input type="text" name="nom" placeholder="Nom" class="w-full p-3 rounded-lg border border-gray-200 focus:outline-sage" required>
+                </div>
+                <input type="email" name="email" placeholder="Email *" class="w-full p-3 rounded-lg border border-gray-200 focus:outline-sage" required>
+                <input type="text" name="subject" placeholder="Objet *" class="w-full p-3 rounded-lg border border-gray-200 focus:outline-sage" required>
+                <textarea name="message" placeholder="Message" rows="5" class="w-full p-3 rounded-lg border border-gray-200 focus:outline-sage" required></textarea>
+                <button type="submit" class="bg-sage text-white w-full py-3 rounded-lg uppercase text-xs tracking-widest">Envoyer</button>
+            </form>
+        </div>
+        <img src="office-chairs.jpg" alt="Bureau" class="rounded-2xl object-cover h-full shadow-sm">
+    </section>
 
-      <div class="card">
-        <h3>Relationship Support</h3>
-        <p>Guidance for communication, boundaries, and relationship dynamics.</p>
-      </div>
-
-      <div class="card">
-        <h3>Stress & Life Changes</h3>
-        <p>Support through transitions, overwhelm, and emotional regulation.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Email: yourname@email.com</p>
-    <p>Location: Montreal, QC</p>
-  </section>
-
-  <footer>
-    <p>© 2026 Serena R.A. All rights reserved.</p>
-  </footer>
+    <footer class="text-center py-10 border-t border-gray-200 text-[10px] uppercase tracking-widest text-gray-400">
+        <p>©2026 Serena Lockett, R.A. Tous droits réservés.</p>
+        <p class="mt-2">Mentions légales | Confidentialité</p>
+    </footer>
 
 </body>
 </html>
