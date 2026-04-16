@@ -9,40 +9,41 @@
     <style>
         body { font-family: 'Work Sans', sans-serif; background-color: #FDFDFB; color: #4A4A4A; }
         
+        /* Floating Pill Header */
         #navbar {
-            background-color: rgba(94, 113, 97, 0.5);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            background-color: rgba(94, 113, 97, 0.5); 
+            transition: all 0.5s ease;
             position: fixed;
-            top: 0; width: 100%; z-index: 1000;
+            top: 20px; left: 50%; transform: translateX(-50%);
+            width: 95%; max-width: 1200px; z-index: 1000;
+            border-radius: 50px; backdrop-filter: blur(8px);
         }
+        .header-hidden { opacity: 0; pointer-events: none; transform: translate(-50%, -20px) !important; }
 
+        /* Typography */
         .name-header { font-size: 28px; color: white; line-height: 1; }
         .title-header { font-size: 19px; color: white; font-style: italic; font-weight: 300; }
-        .header-hidden { opacity: 0; pointer-events: none; transform: translateY(-10px); }
-
-        /* Hero Text Opacity */
         .hero-text { color: rgba(255, 255, 255, 0.78); }
 
-        /* FAQ details styling */
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body>
 
-    <nav id="navbar" class="py-4 px-6 md:px-12 flex justify-between items-center">
+    <nav id="navbar" class="py-3 px-8 md:px-12 flex justify-between items-center shadow-sm">
         <div class="flex items-center gap-4">
-            <img src="logo.png" alt="Logo" class="h-12 w-auto">
+            <img src="logo.png" alt="Logo" class="h-10 w-auto">
             <div>
-                <div class="name-header">Serena Lockett, R.A.</div>
-                <div class="title-header">Thérapeute en relation d'aide</div>
+                <div class="name-header">Serena Lockett, R.A. [cite: 1]</div>
+                <div class="title-header">Thérapeute en relation d'aide [cite: 1]</div>
             </div>
         </div>
-        <div class="hidden md:flex items-center gap-8 text-white text-[16px]">
+        <div class="hidden md:flex items-center gap-8 text-white text-[14px] uppercase tracking-widest font-medium">
             <a href="#about">À propos</a>
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
-            <a href="#booking" class="bg-[#5E7161] px-6 py-2 rounded-full">Rendez-vous</a>
+            <a href="#booking" class="bg-[#5E7161] px-6 py-2 rounded-full hover:bg-opacity-90 transition-all text-white">Rendez-vous</a>
         </div>
     </nav>
 
@@ -50,60 +51,89 @@
         <div class="relative z-10">
             <h1 class="hero-text text-4xl md:text-5xl font-light leading-tight">
                 Un espace d'écoute, <br>
-                <span class="italic">sans jugement.</span>
+                <span class="italic">sans jugement. [cite: 6]</span>
             </h1>
         </div>
     </header>
 
     <section id="about" class="max-w-6xl mx-auto py-24 px-6 grid md:grid-cols-2 gap-16 items-start">
-        <div class="flex flex-col">
-            <img src="serena-headshot.jpg" alt="Serena Lockett" style="width: 426px; height: 501px;" class="rounded-[40px] shadow-sm object-cover">
-            
-            <div class="mt-8">
-                <h2 class="text-[18px] font-bold">Serena Lockett, R.A.</h2>
-                <div class="text-[16px] uppercase tracking-wide text-gray-500 mt-8 space-y-1">
-                    <p>B.A. spécialisé en psychologie de l'Université d'Ottawa</p>
-                    <p>Membre RITMA et MARA</p>
+        <div class="flex flex-col items-center">
+            <img src="serena-headshot.jpg" alt="Serena Lockett" style="width: 426px; height: 501px;" class="rounded-[40px] shadow-sm object-cover mb-8">
+            <div class="text-center w-[426px]">
+                <h2 class="text-[18px] font-bold">Serena Lockett, R.A. [cite: 7]</h2>
+                <div class="text-[16px] uppercase text-gray-500 mt-2 font-normal leading-tight">
+                    <p>B.A spécialisé en psychologie de l'Université d'Ottawa [cite: 8]</p>
+                    <p>Membre RITMA et MARA [cite: 8]</p>
                 </div>
             </div>
         </div>
         
-        <div class="pt-12 md:pt-0 space-y-6 text-gray-600 leading-relaxed text-[16px]">
-            <p>Je crois fermement que le soutien en santé mentale ne devrait pas être un luxe. C'est pourquoi j'offre un programme solidaire avec des tarifs adaptés.</p>
-            <p>Au-delà de l'écoute, ce qui m'importe est de vous offrir un espace authentique où nous travaillons sur vos enjeux réels.</p>
+        <div class="space-y-8">
+            <h2 class="text-3xl font-light text-gray-800">Ce qui me tient à coeur [cite: 9]</h2>
+            <div class="space-y-6 text-gray-600 leading-relaxed text-[16px]">
+                <p>Je crois fermement que le soutien en santé mentale ne devrait pas être un luxe. C'est pourquoi j'offre un programme solidaire avec des tarifs adaptés pour m'assurer que l'aspect financier ne soit pas un frein à votre mieux-être. [cite: 10, 11]</p>
+                <p>En tant que membre de l'association RITMA, je m'engage à respecter des standards de pratique rigoureux. Vous avez droit à un suivi encadré, éthique et sécuritaire. [cite: 12, 13]</p>
+                <p>Au-delà de l'écoute, ce qui m'importe est de vous offrir un espace authentique où nous travaillons sur vos enjeux réels, sans détours inutiles, pour favoriser un changement tangible dans votre quotidien. [cite: 14]</p>
+            </div>
+
+            <div class="bg-[#D9E3D6] p-10 rounded-[40px] space-y-4">
+                <h3 class="text-xl font-medium text-gray-800">Pour qui est la thérapie en relation d'aide ? [cite: 15]</h3>
+                <p class="text-[15px] leading-relaxed text-gray-700 italic">Contrairement à la psychothérapie traditionnelle, la relation d'aide mise avant tout sur l'ici et maintenant.</p>
+                <ul class="text-[14px] text-gray-700 space-y-2 list-disc pl-5">
+                    <li>Transitions de vie: Immigration, expatriation, deuil ou rupture. [cite: 16]</li>
+                    <li>Défis professionnels: Stress au travail ou changement de carrière. [cite: 16]</li>
+                    <li>Gestion de soi: Anxiété, estime de soi et régulation des émotions. [cite: 17]</li>
+                    <li>Vie relationnelle: Difficultés de communication, conflits familiaux ou de couple. [cite: 18]</li>
+                    <li>Équilibre au quotidien: Stress financier, insomnie et besoin de faire le point. [cite: 19]</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <section id="faq" class="bg-[#F9F9F7] py-24">
+    <section id="services" class="bg-[#F9F9F7] py-24">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-light mb-16 text-center tracking-widest uppercase">FAQs</h2>
+            <h2 class="text-3xl font-light mb-16 text-left tracking-widest uppercase text-gray-500">Services [cite: 20]</h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-20">
+                <div class="bg-white p-10 rounded-2xl text-center border border-gray-50 shadow-sm">
+                    <h4 class="font-medium text-gray-800">Thérapie individuelle [cite: 21]</h4>
+                    <p class="text-3xl font-light my-4 text-[#5E7161]">70$ [cite: 22]</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest">50 min. [cite: 23]</p>
+                </div>
+                <div class="bg-white p-10 rounded-2xl text-center border border-gray-50 shadow-sm">
+                    <h4 class="font-medium text-gray-800">Thérapie de couple [cite: 25]</h4>
+                    <p class="text-3xl font-light my-4 text-[#5E7161]">70$ [cite: 25]</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest">50 min. [cite: 26]</p>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-light mb-12 text-left tracking-widest uppercase text-gray-500">FAQs [cite: 27]</h2>
             <div class="grid md:grid-cols-2 gap-x-12 gap-y-4">
                 <div class="space-y-4">
                     <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Offrez-vous des reçus d'assurances? <span>↓</span></summary>
-                        <div class="p-5 border-t border-gray-50 text-gray-600">Oui, en tant que membre RITMA, je fournis des reçus pour vos assurances.</div>
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Offrez-vous des reçus d'assurances? [cite: 28] <span class="text-gray-400">↓</span></summary>
+                        <div class="p-5 border-t border-gray-50 text-gray-600">Oui. En tant que membre RITMA, je fournis des reçus pour vos assurances. [cite: 29]</div>
                     </details>
                     <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Quels sont vos tarifs? <span>↓</span></summary>
-                        <div class="p-5 border-t border-gray-50 text-gray-600">Le tarif est de 70$ par séance de 50 minutes.</div>
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Quels sont vos tarifs? [cite: 31] <span class="text-gray-400">↓</span></summary>
+                        <div class="p-5 border-t border-gray-50 text-gray-600">Le tarif est de 70$ par séance de 50 minutes. [cite: 22, 25]</div>
                     </details>
                     <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Quelle est votre politique d'annulation? <span>↓</span></summary>
-                        <div class="p-5 border-t border-gray-50 text-gray-600">Un préavis de 24h est requis pour éviter les frais.</div>
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Quelle est votre politique d'annulation? [cite: 32] <span class="text-gray-400">↓</span></summary>
+                        <div class="p-5 border-t border-gray-50 text-gray-600">Un préavis de 24h est requis pour modifier un rendez-vous.</div>
                     </details>
                 </div>
                 <div class="space-y-4">
                     <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Comment se déroule une première séance? <span>↓</span></summary>
-                        <div class="p-5 border-t border-gray-50 text-gray-600">Nous explorons vos besoins et établissons un cadre de travail.</div>
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Comment se déroule une première séance? [cite: 30] <span class="text-gray-400">↓</span></summary>
+                        <div class="p-5 border-t border-gray-50 text-gray-600">La première séance sert à identifier vos besoins et définir nos objectifs.</div>
                     </details>
                     <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">À combien de séances dois-je m'attendre? <span>↓</span></summary>
-                        <div class="p-5 border-t border-gray-50 text-gray-600">Cela dépend de vos objectifs et de votre rythme.</div>
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">À combien de séances dois-je m'attendre? [cite: 35] <span class="text-gray-400">↓</span></summary>
+                        <div class="p-5 border-t border-gray-50 text-gray-600">Le nombre de séances varie selon votre situation et vos besoins de changement tangible.</div>
                     </details>
                     <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Est-ce confidentiel? <span>↓</span></summary>
-                        <div class="p-5 border-t border-gray-50 text-gray-600">Absolument. La confidentialité est au cœur de ma pratique éthique.</div>
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Est-ce confidentiel? <span class="text-gray-400">↓</span></summary>
+                        <div class="p-5 border-t border-gray-50 text-gray-600">Absolument. Je m'engage à offrir un suivi éthique et sécuritaire.</div>
                     </details>
                 </div>
             </div>
@@ -114,40 +144,43 @@
         <div class="space-y-8">
             <h2 class="text-3xl font-light">Avez-vous des questions?</h2>
             <p class="whitespace-nowrap text-[16px]">Contactez-moi via l'adresse courriel <a href="mailto:counselling@serenalockett.com" class="text-[#5E7161] underline">counselling@serenalockett.com</a></p>
-            
             <div class="flex items-center gap-4 text-gray-300 text-sm">
-                <div class="flex-grow border-t"></div> OU <div class="flex-grow border-t"></div>
+                <div class="flex-grow border-t border-gray-200"></div> OU <div class="flex-grow border-t border-gray-200"></div>
             </div>
-
             <form action="https://formspree.io/f/YOUR_ID" method="POST" class="space-y-4">
                 <p class="text-gray-600">Complétez le formulaire suivant:</p>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="text-xs text-gray-500">Prénom *</label>
-                        <input type="text" name="prenom" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:outline-none" required>
+                        <label class="text-xs text-gray-500">Prénom * [cite: 39]</label>
+                        <input type="text" name="prenom" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md outline-none" required>
                     </div>
                     <div>
-                        <label class="text-xs text-gray-500">Nom *</label>
-                        <input type="text" name="nom" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:outline-none" required>
+                        <label class="text-xs text-gray-500">Nom * [cite: 44]</label>
+                        <input type="text" name="nom" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md outline-none" required>
                     </div>
                 </div>
                 <div>
-                    <label class="text-xs text-gray-500">Email *</label>
-                    <input type="email" name="email" placeholder="votre@email.com" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:outline-none" required>
+                    <label class="text-xs text-gray-500">Email * [cite: 40]</label>
+                    <input type="email" name="email" placeholder="votre@email.com [cite: 41]" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md outline-none" required>
                 </div>
                 <div>
-                    <label class="text-xs text-gray-500">Objet *</label>
-                    <input type="text" name="subject" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:outline-none" required>
+                    <label class="text-xs text-gray-500">Objet * [cite: 42]</label>
+                    <input type="text" name="subject" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md outline-none" required>
                 </div>
                 <div>
-                    <label class="text-xs text-gray-500">Message *</label>
-                    <textarea name="message" rows="5" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:outline-none" required></textarea>
+                    <label class="text-xs text-gray-500">Message * [cite: 43]</label>
+                    <textarea name="message" rows="5" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md outline-none" required></textarea>
                 </div>
-                <button type="submit" class="bg-[#5E7161] text-white w-full py-3 rounded-full uppercase tracking-widest text-sm hover:opacity-90">Envoyer</button>
+                <button type="submit" class="bg-[#5E7161] text-white w-full py-3 rounded-full uppercase tracking-widest text-sm font-medium">Envoyer [cite: 45]</button>
             </form>
         </div>
-        <img src="office-chairs.jpg" alt="Bureau" class="rounded-[40px] object-cover h-[600px] sticky top-32">
+        <img src="office-chairs.jpg" alt="Bureau" class="rounded-[40px] object-cover h-[650px] shadow-sm sticky top-32">
     </section>
+
+    <footer class="text-center py-12 border-t border-gray-100 text-[10px] uppercase tracking-[0.2em] text-gray-400">
+        <p>©2026 Serena Lockett, R.A. Tous droits réservés. [cite: 47]</p>
+        <p class="mt-4">Mentions légales | Confidentialité [cite: 49]</p>
+    </footer>
 
     <script>
         let lastScrollY = window.scrollY;
@@ -164,7 +197,7 @@
 
         const items = document.querySelectorAll('.faq-item');
         items.forEach(item => {
-            item.addEventListener('toggle', (e) => {
+            item.addEventListener('toggle', () => {
                 if (item.open) {
                     items.forEach(other => { if (other !== item) other.open = false; });
                 }
