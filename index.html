@@ -4,30 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serena Lockett | Thérapeute en relation d'aide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Work Sans', sans-serif; background-color: #FDFDFB; color: #4A4A4A; }
         
-        /* Floating Header Logic */
         #navbar {
-            background-color: rgba(94, 113, 97, 0.5); /* #5E7161 at 50% */
-            transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.3s ease;
+            background-color: rgba(94, 113, 97, 0.5);
+            transition: opacity 0.5s ease, transform 0.5s ease;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
+            top: 0; width: 100%; z-index: 1000;
         }
 
+        .name-header { font-size: 28px; color: white; line-height: 1; }
+        .title-header { font-size: 19px; color: white; font-style: italic; font-weight: 300; }
         .header-hidden { opacity: 0; pointer-events: none; transform: translateY(-10px); }
 
-        /* Typography Specs */
-        .name-header { font-size: 28px; color: white; line-height: 1; font-weight: 400; }
-        .title-header { font-size: 19px; color: white; font-style: italic; font-weight: 300; }
+        /* Hero Text Opacity */
         .hero-text { color: rgba(255, 255, 255, 0.78); }
 
-        /* FAQ Customization */
+        /* FAQ details styling */
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
     </style>
@@ -43,66 +39,71 @@
             </div>
         </div>
         <div class="hidden md:flex items-center gap-8 text-white text-[16px]">
-            <a href="#about" class="hover:opacity-80">À propos</a>
-            <a href="#services" class="hover:opacity-80">Services</a>
-            <a href="#contact" class="hover:opacity-80">Contact</a>
-            <a href="#booking" class="bg-[#5E7161] px-6 py-2 rounded-full hover:bg-opacity-90 transition-all">Rendez-vous</a>
+            <a href="#about">À propos</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <a href="#booking" class="bg-[#5E7161] px-6 py-2 rounded-full">Rendez-vous</a>
         </div>
     </nav>
 
     <header class="relative h-screen w-full flex items-center justify-start px-6 md:px-20 bg-cover bg-center" style="background-image: url('teacup.jpg');">
         <div class="relative z-10">
-            <h1 class="hero-text text-4xl md:text-5xl font-light italic leading-tight">
-                Un espace d'écoute,<br>sans jugement.
+            <h1 class="hero-text text-4xl md:text-5xl font-light leading-tight">
+                Un espace d'écoute, <br>
+                <span class="italic">sans jugement.</span>
             </h1>
         </div>
     </header>
 
-    <section id="about" class="max-w-6xl mx-auto py-24 px-6 grid md:grid-cols-2 gap-16 items-center">
-        <img src="serena-headshot.jpg" alt="Serena Lockett" class="rounded-[40px] shadow-sm">
-        <div>
-            <h2 class="text-[18px] font-bold mb-2 uppercase tracking-tight">Serena Lockett, R.A.</h2>
-            <div class="text-[16px] uppercase tracking-wide text-gray-500 mb-8 font-normal leading-relaxed">
-                <p>B.A. spécialisé en psychologie de l'Université d'Ottawa</p>
-                <p>Membre RITMA et MARA</p>
+    <section id="about" class="max-w-6xl mx-auto py-24 px-6 grid md:grid-cols-2 gap-16 items-start">
+        <div class="flex flex-col">
+            <img src="serena-headshot.jpg" alt="Serena Lockett" style="width: 426px; height: 501px;" class="rounded-[40px] shadow-sm object-cover">
+            
+            <div class="mt-8">
+                <h2 class="text-[18px] font-bold">Serena Lockett, R.A.</h2>
+                <div class="text-[16px] uppercase tracking-wide text-gray-500 mt-8 space-y-1">
+                    <p>B.A. spécialisé en psychologie de l'Université d'Ottawa</p>
+                    <p>Membre RITMA et MARA</p>
+                </div>
             </div>
-            <div class="space-y-6 text-gray-600 leading-relaxed text-[16px]">
-                <p>Je crois fermement que le soutien en santé mentale ne devrait pas être un luxe. C'est pourquoi j'offre un programme solidaire avec des tarifs adaptés. [cite: 10, 11]</p>
-                <p>Au-delà de l'écoute, ce qui m'importe est de vous offrir un espace authentique où nous travaillons sur vos enjeux réels. [cite: 14]</p>
-            </div>
+        </div>
+        
+        <div class="pt-12 md:pt-0 space-y-6 text-gray-600 leading-relaxed text-[16px]">
+            <p>Je crois fermement que le soutien en santé mentale ne devrait pas être un luxe. C'est pourquoi j'offre un programme solidaire avec des tarifs adaptés.</p>
+            <p>Au-delà de l'écoute, ce qui m'importe est de vous offrir un espace authentique où nous travaillons sur vos enjeux réels.</p>
         </div>
     </section>
 
     <section id="faq" class="bg-[#F9F9F7] py-24">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-light mb-16 text-center">Avez-vous des questions?</h2>
+            <h2 class="text-3xl font-light mb-16 text-center tracking-widest uppercase">FAQs</h2>
             <div class="grid md:grid-cols-2 gap-x-12 gap-y-4">
                 <div class="space-y-4">
                     <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between items-center font-medium">Offrez-vous des reçus d'assurances? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t border-gray-50 text-gray-600">Oui, en tant que membre RITMA, je fournis des reçus pour vos assurances. [cite: 12]</div>
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Offrez-vous des reçus d'assurances? <span>↓</span></summary>
+                        <div class="p-5 border-t border-gray-50 text-gray-600">Oui, en tant que membre RITMA, je fournis des reçus pour vos assurances.</div>
                     </details>
                     <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between items-center font-medium">Quels sont vos tarifs? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t border-gray-50 text-gray-600 text-[16px]">Le tarif est de 70$ par séance de 50 minutes. [cite: 22, 23]</div>
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Quels sont vos tarifs? <span>↓</span></summary>
+                        <div class="p-5 border-t border-gray-50 text-gray-600">Le tarif est de 70$ par séance de 50 minutes.</div>
                     </details>
                     <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between items-center font-medium">Quelle est votre politique d'annulation? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t border-gray-50 text-gray-600">Un préavis de 24h est requis pour toute modification de rendez-vous.</div>
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Quelle est votre politique d'annulation? <span>↓</span></summary>
+                        <div class="p-5 border-t border-gray-50 text-gray-600">Un préavis de 24h est requis pour éviter les frais.</div>
                     </details>
                 </div>
                 <div class="space-y-4">
                     <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between items-center font-medium">Comment se déroule une première séance? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t border-gray-50 text-gray-600">La première séance sert à identifier vos besoins et définir nos objectifs.</div>
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Comment se déroule une première séance? <span>↓</span></summary>
+                        <div class="p-5 border-t border-gray-50 text-gray-600">Nous explorons vos besoins et établissons un cadre de travail.</div>
                     </details>
                     <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between items-center font-medium">À combien de séances dois-je m'attendre? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t border-gray-50 text-gray-600">Le nombre de séances varie selon votre situation et vos besoins de changement tangible. [cite: 14]</div>
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">À combien de séances dois-je m'attendre? <span>↓</span></summary>
+                        <div class="p-5 border-t border-gray-50 text-gray-600">Cela dépend de vos objectifs et de votre rythme.</div>
                     </details>
                     <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between items-center font-medium">Est-ce confidentiel? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t border-gray-50 text-gray-600">Absolument. Je m'engage à offrir un suivi éthique et sécuritaire. [cite: 13]</div>
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Est-ce confidentiel? <span>↓</span></summary>
+                        <div class="p-5 border-t border-gray-50 text-gray-600">Absolument. La confidentialité est au cœur de ma pratique éthique.</div>
                     </details>
                 </div>
             </div>
@@ -112,72 +113,60 @@
     <section id="contact" class="max-w-6xl mx-auto py-24 px-6 grid md:grid-cols-2 gap-16 items-start">
         <div class="space-y-8">
             <h2 class="text-3xl font-light">Avez-vous des questions?</h2>
-            <p class="text-[16px]">Contactez-moi via l'adresse courriel <a href="mailto:counselling@serenalockett.com" class="text-[#5E7161] underline">counselling@serenalockett.com</a></p>
+            <p class="whitespace-nowrap text-[16px]">Contactez-moi via l'adresse courriel <a href="mailto:counselling@serenalockett.com" class="text-[#5E7161] underline">counselling@serenalockett.com</a></p>
             
-            <div class="flex items-center gap-4 text-gray-200 text-sm">
-                <div class="flex-grow border-t"></div> OU <div class="flex-grow border-t border-gray-200"></div>
+            <div class="flex items-center gap-4 text-gray-300 text-sm">
+                <div class="flex-grow border-t"></div> OU <div class="flex-grow border-t"></div>
             </div>
 
             <form action="https://formspree.io/f/YOUR_ID" method="POST" class="space-y-4">
                 <p class="text-gray-600">Complétez le formulaire suivant:</p>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="text-xs text-gray-400 font-medium">Prénom *</label>
-                        <input type="text" name="prenom" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:border-[#5E7161] outline-none" required>
+                        <label class="text-xs text-gray-500">Prénom *</label>
+                        <input type="text" name="prenom" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:outline-none" required>
                     </div>
                     <div>
-                        <label class="text-xs text-gray-400 font-medium">Nom *</label>
-                        <input type="text" name="nom" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:border-[#5E7161] outline-none" required>
+                        <label class="text-xs text-gray-500">Nom *</label>
+                        <input type="text" name="nom" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:outline-none" required>
                     </div>
                 </div>
                 <div>
-                    <label class="text-xs text-gray-400 font-medium">Email *</label>
-                    <input type="email" name="email" placeholder="votre@email.com" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:border-[#5E7161] outline-none" required>
+                    <label class="text-xs text-gray-500">Email *</label>
+                    <input type="email" name="email" placeholder="votre@email.com" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:outline-none" required>
                 </div>
                 <div>
-                    <label class="text-xs text-gray-400 font-medium">Objet *</label>
-                    <input type="text" name="subject" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:border-[#5E7161] outline-none" required>
+                    <label class="text-xs text-gray-500">Objet *</label>
+                    <input type="text" name="subject" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:outline-none" required>
                 </div>
                 <div>
-                    <label class="text-xs text-gray-400 font-medium">Message *</label>
-                    <textarea name="message" rows="5" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:border-[#5E7161] outline-none" required></textarea>
+                    <label class="text-xs text-gray-500">Message *</label>
+                    <textarea name="message" rows="5" class="w-full p-3 bg-gray-50 border border-gray-100 rounded-md focus:outline-none" required></textarea>
                 </div>
-                <button type="submit" class="bg-[#5E7161] text-white w-full py-3 rounded-full uppercase tracking-[0.2em] text-sm hover:opacity-90 transition-all">Envoyer</button>
+                <button type="submit" class="bg-[#5E7161] text-white w-full py-3 rounded-full uppercase tracking-widest text-sm hover:opacity-90">Envoyer</button>
             </form>
         </div>
-        <img src="office-chairs.jpg" alt="Espace de consultation" class="rounded-[40px] object-cover h-[650px] shadow-sm sticky top-32">
+        <img src="office-chairs.jpg" alt="Bureau" class="rounded-[40px] object-cover h-[600px] sticky top-32">
     </section>
 
-    <footer class="text-center py-12 border-t border-gray-100 text-[10px] uppercase tracking-[0.2em] text-gray-400">
-        <p>©2026 Serena Lockett, R.A. Tous droits réservés.</p>
-        <p class="mt-4">Mentions légales | Confidentialité</p>
-    </footer>
-
     <script>
-        // Header Hide/Show & Transparency Shift
         let lastScrollY = window.scrollY;
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                if (window.scrollY > lastScrollY) { 
-                    navbar.classList.add('header-hidden'); 
-                } else { 
-                    navbar.classList.remove('header-hidden'); 
-                    navbar.style.backgroundColor = "rgba(94, 113, 97, 0.8)"; /* Darker on scroll up */
-                }
+                if (window.scrollY > lastScrollY) { navbar.classList.add('header-hidden'); }
+                else { navbar.classList.remove('header-hidden'); navbar.style.backgroundColor = "rgba(94, 113, 97, 0.8)"; }
             } else {
-                navbar.classList.remove('header-hidden'); 
-                navbar.style.backgroundColor = "rgba(94, 113, 97, 0.5)"; /* Native 50% opacity */
+                navbar.classList.remove('header-hidden'); navbar.style.backgroundColor = "rgba(94, 113, 97, 0.5)";
             }
             lastScrollY = window.scrollY;
         });
 
-        // FAQ logic: Only allow 1 open at a time
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            item.addEventListener('toggle', () => {
+        const items = document.querySelectorAll('.faq-item');
+        items.forEach(item => {
+            item.addEventListener('toggle', (e) => {
                 if (item.open) {
-                    faqItems.forEach(other => { if (other !== item) other.open = false; });
+                    items.forEach(other => { if (other !== item) other.open = false; });
                 }
             });
         });
