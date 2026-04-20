@@ -23,9 +23,8 @@
         .header-hidden { opacity: 0; pointer-events: none; transform: translate(-50%, -20px) !important; }
         #mobile-menu { transition: transform 0.4s ease; transform: translateX(100%); }
         #mobile-menu.open { transform: translateX(0); }
-        
-        /* Accordion fix for FAQs */
-        details[open] { background-color: #fff; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
 
         /* Mobile Background for Contact */
         #contact { background-size: cover; background-position: center; position: relative; }
@@ -75,7 +74,7 @@
         </h1>
     </header>
 
-    <section id="about" class="max-w-7xl mx-auto py-16 md:py-24 px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+    <section id="about" class="max-w-7xl mx-auto py-16 md:py-24 px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-start">
         <div class="flex flex-col items-center px-4">
             <img src="serena-mobile.jpg" alt="Serena Mobile" class="lg:hidden rounded-full shadow-sm object-cover w-64 h-64 mb-8">
             <img src="serena-headshot.jpg" alt="Serena Desktop" class="hidden lg:block rounded-[40px] shadow-sm object-cover lg:w-[426px] lg:h-[501px] mb-8">
@@ -104,18 +103,21 @@
     <section id="services" class="bg-[#F9F9F7] py-24">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl font-light mb-16 tracking-widest uppercase text-gray-500 text-left">Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 text-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 text-center">
                 <div class="bg-white p-10 rounded-2xl border border-gray-50 shadow-sm">
                     <h4 class="font-medium text-gray-800">Thérapie individuelle</h4>
-                    <p class="text-3xl font-light my-4 text-[#5E7161]">70$</p>
+                    <p class="text-3xl font-light my-4 text-[#5E7161]">70$*</p>
                     <p class="text-xs text-gray-400 uppercase tracking-widest">50 min.</p>
                 </div>
                 <div class="bg-white p-10 rounded-2xl border border-gray-50 shadow-sm">
                     <h4 class="font-medium text-gray-800">Thérapie de couple</h4>
-                    <p class="text-3xl font-light my-4 text-[#5E7161]">70$</p>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest">50 min.</p>
+                    <p class="text-3xl font-light my-4 text-[#5E7161]">115$*</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest">80 min.</p>
                 </div>
             </div>
+            <p class="text-center italic text-gray-600 mb-20 text-[14px]">
+                * Tarification solidaire disponible. Si l'aspect financier est une source d’inquiétude pour vous, contactez-moi et nous trouverons ensemble une solution adaptée à votre réalité.
+            </p>
 
             <h2 class="text-3xl font-light mb-12 tracking-widest uppercase text-gray-500 text-left">FAQs</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
