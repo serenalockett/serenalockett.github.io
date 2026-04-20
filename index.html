@@ -8,9 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* This prevents the browser from forcing dark mode on mobile */
         :root { color-scheme: light; }
-        
         body { font-family: 'Work Sans', sans-serif; background-color: #FDFDFB; color: #4A4A4A; overflow-x: hidden; }
         
         #navbar {
@@ -40,8 +38,8 @@
         <div class="flex items-center gap-3">
             <img src="logo.png" alt="Logo" class="h-8 md:h-10 w-auto">
             <div class="whitespace-nowrap">
-                <div class="text-[18px] md:text-[21px] text-white leading-tight font-medium">Serena Lockett, R.A.</div>
-                <div class="text-[12px] md:text-[15px] text-white italic font-light">Thérapeute en relation d'aide</div>
+                <div class="text-[18px] md:text-[22px] text-white leading-tight font-medium">Serena Lockett, R.A.</div>
+                <div class="text-[14px] md:text-[16px] text-white italic font-light">Thérapeute en relation d'aide</div>
             </div>
         </div>
         
@@ -63,8 +61,8 @@
         <a href="#booking" class="m-link bg-white text-[#5E7161] px-10 py-3 rounded-full font-bold">Rendez-vous</a>
     </div>
 
-    <header class="relative h-screen w-full flex items-center justify-start px-6 md:px-[10vw] bg-cover bg-center" style="background-image: url('teacup.png');">
-        <h1 class="text-white font-light leading-tight text-3xl md:text-5xl" style="text-shadow: 0px 2px 4px rgba(0,0,0,0.3);">
+    <header class="relative h-screen w-full flex items-center justify-start px-6 md:px-[10vw] bg-cover bg-center" style="background-image: url('teacup.png'); background-color: #FDFDFB;">
+        <h1 class="text-white/90 font-light leading-tight text-3xl md:text-5xl">
             Un espace d'écoute, <br> <span class="italic">sans jugement.</span>
         </h1>
     </header>
@@ -116,38 +114,6 @@
                     <p class="text-xs text-gray-400 uppercase tracking-widest">50 min.</p>
                 </div>
             </div>
-
-            <h2 class="text-3xl font-light mb-12 tracking-widest uppercase text-gray-500 text-left">FAQs</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
-                <div class="space-y-4">
-                    <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Reçus d'assurances? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-sm">Oui. En tant que membre RITMA, je fournis des reçus.</div>
-                    </details>
-                    <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Tarifs? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-sm">Le tarif est de 70$ par séance de 50 minutes.</div>
-                    </details>
-                    <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Annulation? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-sm">Un préavis de 24h est requis.</div>
-                    </details>
-                </div>
-                <div class="space-y-4">
-                    <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Première séance? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-sm">On identifie vos besoins et définissons nos objectifs.</div>
-                    </details>
-                    <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Combien de séances? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-sm">Cela varie selon votre situation et vos besoins.</div>
-                    </details>
-                    <details class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Confidentialité? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-sm">C'est au cœur de ma pratique éthique et sécuritaire.</div>
-                    </details>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -157,9 +123,7 @@
             <div class="bg-white/95 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none p-8 lg:p-0 rounded-[40px] lg:rounded-none space-y-8">
                 <h2 class="text-3xl font-light lg:text-gray-800 text-gray-900">Avez-vous des questions?</h2>
                 <p class="text-[16px] lg:text-gray-600 text-gray-700">Contactez-moi via <a href="mailto:counselling@serenalockett.com" class="text-[#5E7161] underline font-medium">counselling@serenalockett.com</a></p>
-                <div class="flex items-center gap-4 text-gray-300 py-2"><div class="flex-grow border-t"></div> OU <div class="flex-grow border-t"></div></div>
-                <form class="space-y-4">
-                    <p class="lg:text-gray-600 text-gray-700 font-medium">Complétez le formulaire suivant:</p>
+                <form class="space-y-4 mt-6">
                     <div class="grid grid-cols-2 gap-4">
                         <input type="text" placeholder="Prénom *" class="p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
                         <input type="text" placeholder="Nom *" class="p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
@@ -175,10 +139,6 @@
         </div>
     </section>
 
-    <footer class="text-center py-12 border-t text-[10px] uppercase tracking-widest text-gray-400 bg-white">
-        <p>©2026 Serena Lockett, R.A. Tous droits réservés.</p>
-    </footer>
-
     <script>
         const menuOpen = document.getElementById('menu-open');
         const menuClose = document.getElementById('menu-close');
@@ -186,7 +146,6 @@
         menuOpen.onclick = () => mMenu.classList.add('open');
         menuClose.onclick = () => mMenu.classList.remove('open');
         document.querySelectorAll('.m-link').forEach(l => l.onclick = () => mMenu.classList.remove('open'));
-
         let lastScrollY = window.scrollY;
         window.onscroll = () => {
             const nav = document.getElementById('navbar');
