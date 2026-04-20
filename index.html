@@ -19,20 +19,12 @@
             backdrop-filter: blur(10px);
         }
         .header-hidden { opacity: 0; pointer-events: none; transform: translate(-50%, -20px) !important; }
-
         #mobile-menu { transition: transform 0.4s ease; transform: translateX(100%); }
         #mobile-menu.open { transform: translateX(0); }
-
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
 
-        /* Contact Section Background Logic */
-        #contact { background-size: cover; background-position: center; position: relative; }
-        @media (max-width: 1023px) {
-            #contact { background-image: url('office-chairs.jpg'); }
-        }
         @media (min-width: 1024px) {
-            #contact { background-image: none !important; }
             .mini-slider { overflow-y: auto; scrollbar-width: thin; }
             .mini-slider::-webkit-scrollbar { width: 4px; }
             .mini-slider::-webkit-scrollbar-thumb { background-color: #5E7161; border-radius: 20px; }
@@ -45,16 +37,16 @@
         <div class="flex items-center gap-3">
             <img src="logo.png" alt="Logo" class="h-8 md:h-10 w-auto">
             <div class="whitespace-nowrap">
-                <div class="text-[28px] text-white leading-tight font-medium">Serena Lockett, R.A.</div>
-                <div class="text-[19px] text-white italic font-light">Thérapeute en relation d'aide</div>
+                <div class="text-[22px] text-white leading-tight font-medium">Serena Lockett, R.A.</div>
+                <div class="text-[13px] text-white italic font-light">Thérapeute en relation d'aide</div>
             </div>
         </div>
         
-        <div class="hidden lg:flex items-center text-white uppercase tracking-widest font-medium gap-1.5">
-            <a href="#about" class="text-[16px] px-2 py-1 hover:opacity-75">À propos</a>
-            <a href="#services" class="text-[16px] px-2 py-1 hover:opacity-75">Services</a>
-            <a href="#contact" class="text-[16px] px-2 py-1 hover:opacity-75">Contact</a>
-            <a href="#booking" class="text-[16px] bg-[#5E7161] px-6 py-2 rounded-full ml-4 transition-all hover:bg-opacity-90">Rendez-vous</a>
+        <div class="hidden lg:flex items-center text-white uppercase tracking-widest font-medium gap-[3px]">
+            <a href="#about" class="text-[10px] px-2 py-1 hover:opacity-75">À propos</a>
+            <a href="#services" class="text-[10px] px-2 py-1 hover:opacity-75">Services</a>
+            <a href="#contact" class="text-[10px] px-2 py-1 hover:opacity-75">Contact</a>
+            <a href="#booking" class="text-[10px] bg-[#5E7161] px-4 py-2 rounded-full ml-4 transition-all hover:bg-opacity-90">Rendez-vous</a>
         </div>
 
         <button id="menu-open" class="lg:hidden text-white"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"/></svg></button>
