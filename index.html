@@ -26,17 +26,8 @@
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
 
-        /* Mobile Background for Contact */
         #contact { background-size: cover; background-position: center; position: relative; }
-        @media (max-width: 1023px) {
-            #contact { background-image: url('office-chairs.jpg'); }
-        }
-
-        @media (min-width: 1024px) {
-            .mini-slider { overflow-y: auto; scrollbar-width: thin; }
-            .mini-slider::-webkit-scrollbar { width: 4px; }
-            .mini-slider::-webkit-scrollbar-thumb { background-color: #5E7161; border-radius: 20px; }
-        }
+        @media (max-width: 1023px) { #contact { background-image: url('office-chairs.jpg'); } }
     </style>
 </head>
 <body>
@@ -54,7 +45,7 @@
             <a href="#about" class="text-[13px] px-2 py-1 hover:opacity-75">À propos</a>
             <a href="#services" class="text-[13px] px-2 py-1 hover:opacity-75">Services</a>
             <a href="#contact" class="text-[13px] px-2 py-1 hover:opacity-75">Contact</a>
-            <a href="#booking" class="text-[13px] bg-[#5E7161] px-5 py-2 rounded-full ml-4 transition-all hover:bg-opacity-90">Rendez-vous</a>
+            <a href="booking.html" class="text-[13px] bg-[#5E7161] px-5 py-2 rounded-full ml-4 transition-all hover:bg-opacity-90">Rendez-vous</a>
         </div>
 
         <button id="menu-open" class="lg:hidden text-white"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"/></svg></button>
@@ -65,202 +56,8 @@
         <a href="#about" class="m-link">À propos</a>
         <a href="#services" class="m-link">Services</a>
         <a href="#contact" class="m-link">Contact</a>
-        <a href="#booking" class="m-link bg-white text-[#5E7161] px-10 py-3 rounded-full font-bold">Rendez-vous</a>
+        <a href="booking.html" class="m-link bg-white text-[#5E7161] px-10 py-3 rounded-full font-bold">Rendez-vous</a>
     </div>
 
-    <header class="relative h-screen w-full flex items-center justify-start px-6 md:px-[10vw] bg-cover bg-center" style="background-image: url('teacup.png'); background-color: #FDFDFB;">
-        <h1 class="text-white/90 font-light leading-tight text-3xl md:text-5xl">
-            Un espace d'écoute, <br> <span class="italic">sans jugement.</span>
-        </h1>
-    </header>
-
-    <section id="about" class="max-w-7xl mx-auto py-16 md:py-24 px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 items-start">
-        <div class="flex flex-col items-center px-4">
-            <img src="serena-mobile.jpg" alt="Serena Mobile" class="lg:hidden rounded-full shadow-sm object-cover w-64 h-64 mb-8">
-            <img src="serena-headshot.jpg" alt="Serena Desktop" class="hidden lg:block rounded-[40px] shadow-sm object-cover lg:w-[426px] lg:h-[501px] mb-8">
-            <div class="text-center lg:w-[426px]">
-                <h2 class="text-[17px] font-medium">Serena Lockett, R.A.</h2>
-                <div class="text-[15px] text-gray-500 mt-2 font-normal leading-tight">
-                    <p>B.A spécialisé en psychologie de l'Université d'Ottawa</p>
-                    <p>Membre RITMA et MARA</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="flex flex-col space-y-8 w-full px-4">
-            <h2 class="text-2xl md:text-3xl font-light text-gray-800">Ce qui me tient à coeur</h2>
-            <div class="text-gray-600 leading-relaxed text-[15px] text-justify">
-                <p>Ma priorité est de vous offrir un espace de bienveillance où vous vous sentez pleinement écouté, respecté et accueilli. Je m'engage à faire preuve d'empathie, de sensibilité et d'ouverture, en recevant votre vécu, vos valeurs et vos convictions sans le moindre jugement.</p>
-                <p class="mt-4">Mon approche ne consiste pas à vous imposer des solutions, mais à vous accompagner à votre rythme. Je suis là pour vous aider à vous connecter à vos besoins et à reconnaître vos ressources intérieures. Mon rôle est de vous guider vers vos propres réponses afin de vous permettre d'atteindre l'objectif qui vous a amené ici, toujours dans le respect de vos intérêts.</p>
-            </div>
-            <div class="bg-[#D9E3D6] p-8 rounded-[40px] text-[15px] text-gray-800 text-justify">
-                <p>La solidarité est au cœur de ma pratique. Pour moi, l'accès au soutien ne devrait jamais être limité par votre budget. C'est pourquoi je propose une tarification adaptée via mon programme solidaire.</p>
-                <p class="mt-4 italic">Si l'aspect financier est pour vous une source d’inquiétude, contactez-moi et nous trouverons ensemble une solution adaptée à votre réalité.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="bg-[#F9F9F7] py-24">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-light mb-12 tracking-widest uppercase text-gray-500 text-left">Services</h2>
-            
-            <div class="bg-[#D9E3D6] p-10 rounded-[40px] mb-12">
-                <p class="mb-10 text-gray-800 text-lg">Quel que soit le défi que vous traversez, il existe un espace pour vous. Je vous accompagne, entre autres, dans les situations suivantes:</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-700 text-[14px]">
-                    <ul class="space-y-2 list-disc pl-5">
-                        <li>Besoin d'un espace d'écoute</li>
-                        <li>Gestion du stress et de l'anxiété</li>
-                        <li>Transitions et changements de vie</li>
-                    </ul>
-                    <ul class="space-y-2 list-disc pl-5">
-                        <li>Relations et communication</li>
-                        <li>Confiance et estime de soi</li>
-                        <li>Apprivoisement des émotions</li>
-                    </ul>
-                    <ul class="space-y-2 list-disc pl-5">
-                        <li>Enjeux professionnels</li>
-                        <li>Quête de sens et motivation</li>
-                        <li>Adaptation aux défis quotidiens</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 text-center">
-                <div class="bg-white p-10 rounded-2xl border border-gray-50 shadow-sm">
-                    <h4 class="font-medium text-gray-800">Thérapie individuelle</h4>
-                    <p class="text-3xl font-light my-4 text-[#5E7161]">70$*</p>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest">50 min.</p>
-                </div>
-                <div class="bg-white p-10 rounded-2xl border border-gray-50 shadow-sm">
-                    <h4 class="font-medium text-gray-800">Thérapie de couple</h4>
-                    <p class="text-3xl font-light my-4 text-[#5E7161]">115$*</p>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest">80 min.</p>
-                </div>
-            </div>
-            <p class="text-center italic text-gray-600 mb-20 text-[14px]">
-                * Tarification solidaire disponible. Si l'aspect financier est une source d’inquiétude pour vous, contactez-moi et nous trouverons ensemble une solution adaptée à votre réalité.
-            </p>
-
-            <h2 class="text-3xl font-light mb-12 tracking-widest uppercase text-gray-500 text-left">FAQs</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
-                <div class="space-y-4">
-                    <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Émettez-vous des reçus pour les assurances ? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-[14px]">Absolument. En tant que membre de l'association RITMA, mes services sont reconnus par la majorité des compagnies d'assurance. Notez toutefois qu'Industrielle Alliance ne rembourse pas ce type de reçu spécifique.</div>
-                    </details>
-                    <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Quelles sont les modalités de paiement ? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-[14px]">Le paiement s'effectue par virement Interac à la fin de chaque séance. Une carte de crédit doit être conservée au dossier comme garantie pour les annulations tardives.</div>
-                    </details>
-                    <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Quelle est votre politique d'annulation ? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-[14px]">Un préavis d'au moins 48 heures est requis pour annuler ou modifier un rendez-vous afin d'éviter des frais. Référez-vous à votre contrat de service.</div>
-                    </details>
-                </div>
-                <div class="space-y-4">
-                    <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Où se déroulent les séances ? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-[14px]">Services offerts en ligne. Contactez-moi pour explorer des options de présentiel sur la Rive-Sud de Montréal.</div>
-                    </details>
-                    <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Comment se déroule la première séance ? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-[14px]">Un moment d'accueil privilégié pour faire connaissance, explorer vos besoins et définir vos objectifs dans un espace sans pression.</div>
-                    </details>
-                    <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Confidentialité ? <span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-[14px]">La confidentialité est protégée par le secret professionnel et mon code de déontologie. Vos informations ne sont jamais divulguées sans votre consentement, sauf cas d'urgence légale.</div>
-                    </details>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="booking" class="py-24 px-6 bg-[#FDFDFB]">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-light text-center mb-12 text-gray-800 uppercase tracking-widest">Réserver une séance</h2>
-            <div class="flex justify-center mb-8 gap-4">
-                <button onclick="showBooking('indiv')" id="btn-indiv" class="px-8 py-3 rounded-full bg-[#5E7161] text-white transition-all shadow-md font-medium">Thérapie Individuelle</button>
-                <button onclick="showBooking('couple')" id="btn-couple" class="px-8 py-3 rounded-full bg-white text-[#5E7161] border border-[#5E7161] hover:bg-[#D9E3D6] transition-all font-medium">Thérapie de Couple</button>
-            </div>
-            <div class="bg-white p-4 md:p-8 rounded-[40px] shadow-sm border border-gray-100 overflow-hidden min-h-[600px]">
-                <iframe id="iframe-indiv" src="https://calendar.app.google/W5SwHxaKcgAqaBkCA" width="100%" height="600" frameborder="0"></iframe>
-                <iframe id="iframe-couple" src="https://calendar.app.google/Qu7g5UoMTA21LPPu6" width="100%" height="600" frameborder="0" class="hidden"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 px-6">
-        <div class="absolute inset-0 bg-black/40 lg:hidden"></div>
-        <div class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div class="bg-white/95 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none p-8 lg:p-0 rounded-[40px] lg:rounded-none space-y-8">
-                <h2 class="text-3xl font-light text-gray-800">Avez-vous des questions?</h2>
-                <p class="text-[16px] text-gray-700">Contactez-moi via <a href="mailto:contact@serenalockett.com" class="text-[#5E7161] underline font-medium">contact@serenalockett.com</a></p>
-                <div class="flex items-center gap-4 text-gray-400 py-2"><div class="flex-grow border-t border-gray-300"></div> OU <div class="flex-grow border-t border-gray-300"></div></div>
-                <form class="space-y-4">
-                    <p class="text-gray-700 font-medium">Complétez le formulaire suivant:</p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="Prénom *" class="p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
-                        <input type="text" placeholder="Nom *" class="p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
-                    </div>
-                    <input type="email" placeholder="Email *" class="w-full p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
-                    <textarea rows="5" placeholder="Message *" class="w-full p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required></textarea>
-                    <button type="submit" class="bg-[#5E7161] text-white w-full py-3 rounded-full uppercase tracking-widest text-sm font-medium shadow-md">Envoyer</button>
-                </form>
-            </div>
-            <div class="hidden lg:block">
-                <img src="office-chairs.jpg" alt="Bureau" class="rounded-[40px] object-cover h-[650px] w-full shadow-sm sticky top-32">
-            </div>
-        </div>
-    </section>
-
-    <footer class="text-center py-12 border-t text-[10px] uppercase tracking-widest text-gray-400 bg-white">
-        <p class="mb-3">©2026 SERENA LOCKETT, R.A. TOUS DROITS RÉSERVÉS.</p>
-        <div class="text-[8px] uppercase tracking-widest">
-            <a href="privacy.html" class="hover:text-[#5E7161]">POLITIQUE DE CONFIDENTIALITÉ</a>
-            <span class="mx-1 text-gray-300">|</span>
-            <a href="terms.html" class="hover:text-[#5E7161]">CONDITIONS D'UTILISATION</a>
-        </div>
-    </footer>
-
-    <script>
-        // Menu handling
-        const menuOpen = document.getElementById('menu-open');
-        const menuClose = document.getElementById('menu-close');
-        const mMenu = document.getElementById('mobile-menu');
-        menuOpen.onclick = () => mMenu.classList.add('open');
-        menuClose.onclick = () => mMenu.classList.remove('open');
-        document.querySelectorAll('.m-link').forEach(l => l.onclick = () => mMenu.classList.remove('open'));
-        
-        // Tab handling for booking
-        function showBooking(type) {
-            const indivIframe = document.getElementById('iframe-indiv');
-            const coupleIframe = document.getElementById('iframe-couple');
-            const btnIndiv = document.getElementById('btn-indiv');
-            const btnCouple = document.getElementById('btn-couple');
-
-            if (type === 'indiv') {
-                indivIframe.classList.remove('hidden');
-                coupleIframe.classList.add('hidden');
-                btnIndiv.className = "px-8 py-3 rounded-full bg-[#5E7161] text-white transition-all shadow-md font-medium";
-                btnCouple.className = "px-8 py-3 rounded-full bg-white text-[#5E7161] border border-[#5E7161] hover:bg-[#D9E3D6] transition-all font-medium";
-            } else {
-                coupleIframe.classList.remove('hidden');
-                indivIframe.classList.add('hidden');
-                btnCouple.className = "px-8 py-3 rounded-full bg-[#5E7161] text-white transition-all shadow-md font-medium";
-                btnIndiv.className = "px-8 py-3 rounded-full bg-white text-[#5E7161] border border-[#5E7161] hover:bg-[#D9E3D6] transition-all font-medium";
-            }
-        }
-
-        // Scroll handling
-        let lastScrollY = window.scrollY;
-        window.onscroll = () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                if (window.scrollY > lastScrollY) nav.classList.add('header-hidden');
-                else { nav.classList.remove('header-hidden'); nav.style.backgroundColor = "rgba(94, 113, 97, 0.8)"; }
-            } else { nav.classList.remove('header-hidden'); nav.style.backgroundColor = "rgba(94, 113, 97, 0.6)"; }
-            lastScrollY = window.scrollY;
-        };
-    </script>
-</body>
+    </body>
 </html>
