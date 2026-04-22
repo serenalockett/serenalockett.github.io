@@ -175,12 +175,26 @@
         </div>
     </section>
 
+    <section id="booking" class="py-24 px-6 bg-[#FDFDFB]">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-light text-center mb-12 text-gray-800 uppercase tracking-widest">Réserver une séance</h2>
+            <div class="flex justify-center mb-8 gap-4">
+                <button onclick="showBooking('indiv')" id="btn-indiv" class="px-8 py-3 rounded-full bg-[#5E7161] text-white transition-all shadow-md font-medium">Thérapie Individuelle</button>
+                <button onclick="showBooking('couple')" id="btn-couple" class="px-8 py-3 rounded-full bg-white text-[#5E7161] border border-[#5E7161] hover:bg-[#D9E3D6] transition-all font-medium">Thérapie de Couple</button>
+            </div>
+            <div class="bg-white p-4 md:p-8 rounded-[40px] shadow-sm border border-gray-100 overflow-hidden min-h-[600px]">
+                <iframe id="iframe-indiv" src="https://calendar.app.google/W5SwHxaKcgAqaBkCA" width="100%" height="600" frameborder="0"></iframe>
+                <iframe id="iframe-couple" src="https://calendar.app.google/Qu7g5UoMTA21LPPu6" width="100%" height="600" frameborder="0" class="hidden"></iframe>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="py-24 px-6">
         <div class="absolute inset-0 bg-black/40 lg:hidden"></div>
         <div class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div class="bg-white/95 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none p-8 lg:p-0 rounded-[40px] lg:rounded-none space-y-8">
                 <h2 class="text-3xl font-light text-gray-800">Avez-vous des questions?</h2>
-                <p class="text-[16px] text-gray-700">Contactez-moi via <a href="mailto:counselling@serenalockett.com" class="text-[#5E7161] underline font-medium">counselling@serenalockett.com</a></p>
+                <p class="text-[16px] text-gray-700">Contactez-moi via <a href="mailto:contact@serenalockett.com" class="text-[#5E7161] underline font-medium">contact@serenalockett.com</a></p>
                 <div class="flex items-center gap-4 text-gray-400 py-2"><div class="flex-grow border-t border-gray-300"></div> OU <div class="flex-grow border-t border-gray-300"></div></div>
                 <form class="space-y-4">
                     <p class="text-gray-700 font-medium">Complétez le formulaire suivant:</p>
@@ -209,12 +223,35 @@
     </footer>
 
     <script>
+        // Menu handling
         const menuOpen = document.getElementById('menu-open');
         const menuClose = document.getElementById('menu-close');
         const mMenu = document.getElementById('mobile-menu');
         menuOpen.onclick = () => mMenu.classList.add('open');
         menuClose.onclick = () => mMenu.classList.remove('open');
         document.querySelectorAll('.m-link').forEach(l => l.onclick = () => mMenu.classList.remove('open'));
+        
+        // Tab handling for booking
+        function showBooking(type) {
+            const indivIframe = document.getElementById('iframe-indiv');
+            const coupleIframe = document.getElementById('iframe-couple');
+            const btnIndiv = document.getElementById('btn-indiv');
+            const btnCouple = document.getElementById('btn-couple');
+
+            if (type === 'indiv') {
+                indivIframe.classList.remove('hidden');
+                coupleIframe.classList.add('hidden');
+                btnIndiv.className = "px-8 py-3 rounded-full bg-[#5E7161] text-white transition-all shadow-md font-medium";
+                btnCouple.className = "px-8 py-3 rounded-full bg-white text-[#5E7161] border border-[#5E7161] hover:bg-[#D9E3D6] transition-all font-medium";
+            } else {
+                coupleIframe.classList.remove('hidden');
+                indivIframe.classList.add('hidden');
+                btnCouple.className = "px-8 py-3 rounded-full bg-[#5E7161] text-white transition-all shadow-md font-medium";
+                btnIndiv.className = "px-8 py-3 rounded-full bg-white text-[#5E7161] border border-[#5E7161] hover:bg-[#D9E3D6] transition-all font-medium";
+            }
+        }
+
+        // Scroll handling
         let lastScrollY = window.scrollY;
         window.onscroll = () => {
             const nav = document.getElementById('navbar');
