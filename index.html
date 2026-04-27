@@ -63,7 +63,7 @@
 
     <header class="relative h-screen w-full flex items-center justify-start px-6 md:px-[10vw] bg-cover bg-center" style="background-image: url('teacup.png'); background-color: #FDFDFB;">
         <h1 class="text-white/90 font-light leading-tight text-3xl md:text-5xl">
-            Un espace d'écoute, <br> <span class="italic">sans jugement.</span>
+            Un espace d'écoute,<br><span class="italic">sans jugement.</span>
         </h1>
     </header>
 
@@ -175,15 +175,16 @@
                 <h2 class="text-3xl font-light text-gray-800">Avez-vous d'autres questions?</h2>
                 <p class="text-[16px] text-gray-700">Contactez-moi via <a href="mailto:contact@serenalockett.com" class="text-[#5E7161] underline font-medium">contact@serenalockett.com</a></p>
                 <div class="flex items-center gap-4 text-gray-400 py-2"><div class="flex-grow border-t border-gray-300"></div> OU <div class="flex-grow border-t border-gray-300"></div></div>
-                <form class="space-y-4">
+                <form id="contactForm" class="space-y-4">
                     <p class="text-gray-700 font-medium">Complétez le formulaire suivant:</p>
                     <div class="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="Prénom *" class="p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
-                        <input type="text" placeholder="Nom *" class="p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
+                        <input type="text" id="prenom" placeholder="Prénom *" class="p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
+                        <input type="text" id="nom" placeholder="Nom *" class="p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
                     </div>
-                    <input type="email" placeholder="Email *" class="w-full p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
-                    <textarea rows="5" placeholder="Message *" class="w-full p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required></textarea>
+                    <input type="email" id="email" placeholder="Email *" class="w-full p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
+                    <textarea rows="5" id="message" placeholder="Message *" class="w-full p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required></textarea>
                     <button type="submit" class="bg-[#5E7161] text-white w-full py-3 rounded-full uppercase tracking-widest text-sm font-medium shadow-md">Envoyer</button>
+                    <p class="text-center text-[11px] text-gray-400 italic mt-4">Si le bouton ne s'ouvre pas, vous pouvez m'écrire directement à contact@serenalockett.com</p>
                 </form>
             </div>
             <div class="hidden lg:block">
@@ -218,6 +219,17 @@
             } else { nav.classList.remove('header-hidden'); nav.style.backgroundColor = "rgba(94, 113, 97, 0.6)"; }
             lastScrollY = window.scrollY;
         };
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const prenom = document.getElementById('prenom').value;
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const subject = encodeURIComponent("Demande de contact : " + prenom + " " + nom);
+            const body = encodeURIComponent("Nom: " + prenom + " " + nom + "\nEmail: " + email + "\n\nMessage:\n" + message);
+            window.location.href = "mailto:contact@serenalockett.com?subject=" + subject + "&body=" + body;
+        });
     </script>
 </body>
 </html>
