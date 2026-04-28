@@ -98,7 +98,7 @@
             <h2 class="text-3xl font-light mb-12 tracking-widest uppercase text-gray-500 text-left">Services</h2>
             
             <div class="bg-[#D9E3D6] p-10 rounded-[40px] mb-12">
-                <p class="mb-5 text-gray-800 text-lg">Quel que soit le défi que vous traversez, il existe un espace pour vous. Je vous accompagne, entre autres, dans les situations suivantes:</p>
+                <p class="mb-2 text-gray-800 text-lg">Quel que soit le défi que vous traversez, il existe un espace pour vous. Je vous accompagne, entre autres, dans les situations suivantes:</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-700 text-[14px]">
                     <ul class="space-y-2 list-disc pl-5">
                         <li>Besoin d'un espace d'écoute</li>
@@ -183,8 +183,12 @@
                     </div>
                     <input type="email" id="email" placeholder="Email *" class="w-full p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
                     <textarea rows="5" id="message" placeholder="Message *" class="w-full p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required></textarea>
-                    <button type="submit" class="bg-[#5E7161] text-white w-full py-3 rounded-full uppercase tracking-widest text-sm font-medium shadow-md">Envoyer</button>
-                    <p class="text-center text-[11px] text-gray-400 italic mt-4">Si le bouton ne s'ouvre pas, vous pouvez m'écrire directement à contact@serenalockett.com</p>
+                    <button type="submit" id="submitBtn" class="bg-[#5E7161] text-white w-full py-3 rounded-full uppercase tracking-widest text-sm font-medium shadow-md transition-all">Envoyer</button>
+                    
+                    <div id="fallbackArea" class="hidden mt-6 p-6 bg-white border border-[#5E7161] rounded-[20px] text-center">
+                        <p class="text-[#5E7161] text-sm mb-4">Si votre application de courriel ne s'est pas ouverte automatiquement, veuillez cliquer sur le bouton ci-dessous pour m'écrire manuellement:</p>
+                        <a id="forceLink" href="#" class="inline-block bg-[#5E7161] text-white px-6 py-2 rounded-full text-sm uppercase tracking-widest hover:bg-[#4a5a4d]">Ouvrir mon application mail</a>
+                    </div>
                 </form>
             </div>
             <div class="hidden lg:block">
@@ -222,13 +226,26 @@
 
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
             const prenom = document.getElementById('prenom').value;
             const nom = document.getElementById('nom').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-            const subject = encodeURIComponent("Demande de contact : " + prenom + " " + nom);
-            const body = encodeURIComponent("Nom: " + prenom + " " + nom + "\nEmail: " + email + "\n\nMessage:\n" + message);
-            window.location.href = "mailto:contact@serenalockett.com?subject=" + subject + "&body=" + body;
+            
+            const subject = encodeURIComponent("Demande d'information - " + prenom + " " + nom);
+            const body = encodeURIComponent(message + "\n\n" + prenom + " " + nom + "\n" + email);
+            const mailtoLink = "mailto:contact@serenalockett.com?subject=" + subject + "&body=" + body;
+            
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = "Ouverture de votre courriel...";
+            btn.classList.add('opacity-50');
+
+            window.location.href = mailtoLink;
+
+            setTimeout(() => {
+                document.getElementById('fallbackArea').classList.remove('hidden');
+                document.getElementById('forceLink').href = mailtoLink;
+            }, 2000);
         });
     </script>
 </body>
