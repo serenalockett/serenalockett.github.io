@@ -185,9 +185,17 @@
                     <textarea rows="5" id="message" placeholder="Message *" class="w-full p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required></textarea>
                     <button type="submit" id="submitBtn" class="bg-[#5E7161] text-white w-full py-3 rounded-full uppercase tracking-widest text-sm font-medium shadow-md transition-all">Envoyer</button>
                     
-                    <div id="fallbackArea" class="hidden mt-6 p-6 bg-white border border-[#5E7161] rounded-[20px] text-center">
-                        <p class="text-[#5E7161] text-sm mb-4">Si votre application de courriel ne s'est pas ouverte automatiquement, veuillez cliquer sur le bouton ci-dessous pour m'écrire manuellement:</p>
-                        <a id="forceLink" href="#" class="inline-block bg-[#5E7161] text-white px-6 py-2 rounded-full text-sm uppercase tracking-widest hover:bg-[#4a5a4d]">Ouvrir mon application mail</a>
+                    <div id="fallbackArea" class="hidden mt-6 p-6 bg-white border border-[#5E7161] rounded-[20px] text-center space-y-4">
+                        <p class="text-[#5E7161] text-sm">L'ouverture automatique a échoué. Vous pouvez :</p>
+                        <a id="forceLink" href="#" class="block bg-[#5E7161] text-white px-6 py-2 rounded-full text-sm uppercase tracking-widest hover:bg-[#4a5a4d] transition-all">Ouvrir mon application mail</a>
+                        <div class="flex items-center justify-center gap-2 pt-2 text-gray-700">
+                            <span class="text-sm">ou copier :</span>
+                            <button type="button" onclick="copyEmail()" class="flex items-center gap-2 group hover:text-[#5E7161] transition-all">
+                                <span id="emailText" class="font-medium underline underline-offset-4">contact@serenalockett.com</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            </button>
+                        </div>
+                        <p id="copyFeedback" class="hidden text-[10px] text-green-700 font-bold uppercase tracking-widest">Adresse copiée!</p>
                     </div>
                 </form>
             </div>
@@ -223,6 +231,15 @@
             } else { nav.classList.remove('header-hidden'); nav.style.backgroundColor = "rgba(94, 113, 97, 0.6)"; }
             lastScrollY = window.scrollY;
         };
+
+        function copyEmail() {
+            const email = "contact@serenalockett.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const feedback = document.getElementById('copyFeedback');
+                feedback.classList.remove('hidden');
+                setTimeout(() => feedback.classList.add('hidden'), 2000);
+            });
+        }
 
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
