@@ -26,6 +26,16 @@
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
 
+        /* Smooth cross-fade for rotating navbar subtitle */
+        .subtitle-rotator {
+            display: grid;
+            align-items: center;
+        }
+        .subtitle-rotator span {
+            grid-area: 1 / 1;
+            transition: opacity 0.7s ease-in-out;
+        }
+
         #contact { background-size: cover; background-position: center; position: relative; }
         @media (max-width: 1023px) {
             #contact { background-image: url('office-chairs.jpg'); }
@@ -39,7 +49,10 @@
             <img src="logo.png" alt="Logo" class="h-8 md:h-10 w-auto">
             <div class="whitespace-nowrap">
                 <div class="text-[18px] md:text-[22px] text-white leading-tight font-medium">Serena Lockett, R.A.</div>
-                <div class="text-[14px] md:text-[16px] text-white italic font-light">Thérapeute en relation d'aide</div>
+                <div class="subtitle-rotator text-[13px] md:text-[16px] text-white italic font-light">
+                    <span id="subtitle-1" class="opacity-100">Thérapeute en relation d'aide</span>
+                    <span id="subtitle-2" class="opacity-0 pointer-events-none">Accompagnement / coaching parental</span>
+                </div>
             </div>
         </div>
         
@@ -61,7 +74,7 @@
         <a href="booking.html" class="m-link bg-white text-[#5E7161] px-10 py-3 rounded-full font-bold">Rendez-vous</a>
     </div>
 
-    <header class="relative h-screen w-full flex items-center justify-start px-6 md:px-[10vw] bg-cover bg-center" style="background-image: url('teacup.png'); background-color: #FDFDFB;">
+    <header class="relative h-screen w-full flex items-center justify-start px-6 md:px-[10vw] bg-cover bg-center" style="background-image: url('teacup.jpg'); background-color: #FDFDFB;">
         <h1 class="text-white/90 font-light leading-tight text-3xl md:text-5xl">
             Un espace d'écoute,<br><span class="italic">sans jugement.</span>
         </h1>
@@ -75,7 +88,7 @@
                 <h2 class="text-[17px] font-medium">Serena Lockett, R.A.</h2>
                 <div class="text-[15px] text-gray-500 mt-2 font-normal leading-tight">
                     <p>B.A spécialisé en psychologie de l'Université d'Ottawa</p>
-                    <p>Membre RITMA et MARA</p>
+                    <p>Membre RITMA certifiée MARA</p>
                 </div>
             </div>
         </div>
@@ -215,6 +228,26 @@
     </footer>
 
     <script>
+        // Smooth cross-fade rotation for navbar subtitle
+        const sub1 = document.getElementById('subtitle-1');
+        const sub2 = document.getElementById('subtitle-2');
+        let showingFirst = true;
+
+        setInterval(() => {
+            if (showingFirst) {
+                sub1.classList.remove('opacity-100');
+                sub1.classList.add('opacity-0');
+                sub2.classList.remove('opacity-0');
+                sub2.classList.add('opacity-100');
+            } else {
+                sub2.classList.remove('opacity-100');
+                sub2.classList.add('opacity-0');
+                sub1.classList.remove('opacity-0');
+                sub1.classList.add('opacity-100');
+            }
+            showingFirst = !showingFirst;
+        }, 2800);
+
         const menuOpen = document.getElementById('menu-open');
         const menuClose = document.getElementById('menu-close');
         const mMenu = document.getElementById('mobile-menu');
@@ -234,11 +267,16 @@
 
         function copyEmail() {
             const email = "contact@serenalockett.com";
-            navigator.clipboard.writeText(email).then(() => {
-                const feedback = document.getElementById('copyFeedback');
-                feedback.classList.remove('hidden');
-                setTimeout(() => feedback.classList.add('hidden'), 2000);
-            });
+            const tempInput = document.createElement("input");
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            const feedback = document.getElementById('copyFeedback');
+            feedback.classList.remove('hidden');
+            setTimeout(() => feedback.classList.add('hidden'), 2000);
         }
 
         document.getElementById('contactForm').addEventListener('submit', function(e) {
