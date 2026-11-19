@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serena Lockett | Thérapeute en relation d'aide</title>
+    <title>Serena Lockett, R.A. | Accompagnement parental & Programme COSP™ – Rive-Sud & En ligne</title>
+    <meta name="description" content="Accompagnement parental, soutien familial et Programme COSP™ (Circle of Security Parenting) avec Serena Lockett, R.A., membre RITMA. Consultations en ligne partout au Québec et en présentiel sur la Rive-Sud de Montréal.">
     <link rel="icon" type="image/png" href="favicon.png?v=1">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Serena Lockett, R.A.",
+      "description": "Thérapeute en relation d'aide spécialisée en accompagnement parental, soutien familial et Programme COSP™ (Circle of Security Parenting). Membre RITMA certifiée MARA.",
+      "email": "contact@serenalockett.com",
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Québec" },
+        { "@type": "City", "name": "Longueuil" },
+        { "@type": "City", "name": "Boucherville" },
+        { "@type": "City", "name": "Saint-Lambert" }
+      ],
+      "priceRange": "$$"
+    }
+    </script>
     <style>
         :root { color-scheme: light; }
         img { filter: none !important; }
@@ -75,7 +92,7 @@
 
     <nav id="navbar" class="py-3 px-6 md:px-12 flex justify-between items-center shadow-md w-[92%] top-[15px] rounded-[50px] md:top-[20px]">
         <div class="flex items-center gap-3">
-            <img src="logo.png" alt="Logo" class="h-8 md:h-10 w-auto">
+            <img src="logo.png" alt="Logo Serena Lockett, R.A." class="h-8 md:h-10 w-auto">
             <div class="whitespace-nowrap">
                 <div class="text-[18px] md:text-[22px] text-white leading-tight font-medium">Serena Lockett, R.A.</div>
                 <div class="subtitle-rotator text-[13px] md:text-[16px] text-white italic font-light">
@@ -92,11 +109,11 @@
             <a href="booking.html" class="text-[13px] bg-[#5E7161] px-5 py-2 rounded-full ml-4 transition-all hover:bg-opacity-90">Rendez-vous</a>
         </div>
 
-        <button id="menu-open" class="lg:hidden text-white"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <button id="menu-open" aria-label="Ouvrir le menu" class="lg:hidden text-white"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"/></svg></button>
     </nav>
 
     <div id="mobile-menu" class="fixed inset-0 bg-[#5E7161] z-[1001] flex flex-col items-center justify-center space-y-8 text-white text-2xl uppercase">
-        <button id="menu-close" class="absolute top-8 right-8 text-4xl">&times;</button>
+        <button id="menu-close" aria-label="Fermer le menu" class="absolute top-8 right-8 text-4xl">&times;</button>
         <a href="#about" class="m-link">À propos</a>
         <a href="#services" class="m-link">Services</a>
         <a href="#contact" class="m-link">Contact</a>
@@ -111,8 +128,8 @@
 
     <section id="about" class="max-w-7xl mx-auto py-16 md:py-24 px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 items-start">
         <div class="flex flex-col items-center px-4">
-            <img src="serena-mobile.jpg" alt="Serena Mobile" class="lg:hidden rounded-full shadow-sm object-cover w-64 h-64 mb-8">
-            <img src="serena-headshot.jpg" alt="Serena Desktop" class="hidden lg:block rounded-[40px] shadow-sm object-cover lg:w-[426px] lg:h-[501px] mb-8">
+            <img src="serena-mobile.jpg" alt="Serena Lockett, R.A., thérapeute en relation d'aide et accompagnement parental" class="lg:hidden rounded-full shadow-sm object-cover w-64 h-64 mb-8">
+            <img src="serena-headshot.jpg" alt="Serena Lockett, R.A., thérapeute en relation d'aide et accompagnement parental sur la Rive-Sud de Montréal" class="hidden lg:block rounded-[40px] shadow-sm object-cover lg:w-[426px] lg:h-[501px] mb-8">
             <div class="text-center lg:w-[426px]">
                 <h2 class="text-[17px] font-medium">Serena Lockett, R.A.</h2>
                 <div class="text-[15px] text-gray-500 mt-2 font-normal leading-tight">
@@ -247,11 +264,11 @@
                 <div class="space-y-4">
                     <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
                         <summary class="p-5 cursor-pointer flex justify-between font-medium">Où se déroulent les séances?<span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-[14px]">Mes services sont offerts entièrement en ligne. Toutefois, si vous avez une préférence marquée pour une consultation en présentiel, je vous invite à me contacter afin que nous puissions explorer ensemble les options possibles dans les alentours de la Rive-Sud de Montreal.</div>
+                        <div class="p-5 border-t text-gray-600 text-[14px]">Mes services sont offerts entièrement en ligne. Toutefois, si vous avez une préférence marquée pour une consultation en présentiel, je vous invite à me contacter afin que nous puissions explorer ensemble les options possibles dans les alentours de la Rive-Sud de Montréal.</div>
                     </details>
                     <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
-                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Comment se déroule la première séance?<span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-[14px]">La première rencontre est un moment d'accueil privilégié. Nous prendrons le temps de faire connaissance, d'explorer vos besoins et de définir ensemble vos objectifs. C'est un espace sans pression, conçu pour que vous puissiez évaluer si vous vous sentez à l'aise avec mon approche avant de poursuivre ce cheminement ensemble.</div>
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Qu'est-ce que le Programme COSP™?<span class="text-gray-400">↓</span></summary>
+                        <div class="p-5 border-t text-gray-600 text-[14px]">Le programme <em>Circle of Security Parenting™</em> (Cercle de sécurité parental) est un parcours éducatif reconnu internationalement, fondé sur des décennies de recherche sur l'attachement. À l'aide de repères visuels simples et d'échanges bienveillants en petit groupe, il aide les parents à décoder les besoins émotionnels derrière les comportements de leur enfant (principalement de 6 mois à 6 ans, et adaptable aux enfants plus âgés) et à renforcer la sécurité du lien familial.</div>
                     </details>
                     <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
                         <summary class="p-5 cursor-pointer flex justify-between font-medium">Est-ce confidentiel?<span class="text-gray-400">↓</span></summary>
@@ -294,7 +311,7 @@
                 </form>
             </div>
             <div class="hidden lg:block">
-                <img src="office-chairs.jpg" alt="Bureau" class="rounded-[40px] object-cover h-[650px] w-full shadow-sm sticky top-32">
+                <img src="office-chairs.jpg" alt="Espace de consultation calme et chaleureux" class="rounded-[40px] object-cover h-[650px] w-full shadow-sm sticky top-32">
             </div>
         </div>
     </section>
