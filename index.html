@@ -168,7 +168,7 @@
                     </span>
 
                     <h4 class="font-medium text-lg text-gray-800">Soutien familial</h4>
-                    <p class="text-3xl font-light my-4 text-[#5E7161]">70$- 115$*</p>
+                    <p class="text-3xl font-light my-4 text-[#5E7161]">70$ - 115$*</p>
                     <p class="text-xs text-gray-400 uppercase tracking-widest mb-4">50 - 80 min.</p>
 
                     <div class="service-details text-left">
@@ -225,4 +225,160 @@
                     </details>
                     <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
                         <summary class="p-5 cursor-pointer flex justify-between font-medium">Quelles sont les modalités de paiement?<span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-[14px]">Le paiement s'effectue par virement Interac à la fin de chaque séance
+                        <div class="p-5 border-t text-gray-600 text-[14px]">Le paiement s'effectue par virement Interac à la fin de chaque séance. Une carte de crédit doit cependant être conservée au dossier comme garantie pour les annulations tardives.</div>
+                    </details>
+                    <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Quelle est votre politique d'annulation?<span class="text-gray-400">↓</span></summary>
+                        <div class="p-5 border-t text-gray-600 text-[14px]">Afin de respecter le temps de chacun et de libérer la place pour une autre personne, un préavis d’au moins 48 heures est demandé pour annuler ou modifier un rendez-vous, sans quoi certains frais pourraient être appliqués. (Veuillez vous référer à votre contrat de services pour tous les détails).</div>
+                    </details>
+                </div>
+                <div class="space-y-4">
+                    <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Où se déroulent les séances?<span class="text-gray-400">↓</span></summary>
+                        <div class="p-5 border-t text-gray-600 text-[14px]">Mes services sont offerts entièrement en ligne. Toutefois, si vous avez une préférence marquée pour une consultation en présentiel, je vous invite à me contacter afin que nous puissions explorer ensemble les options possibles dans les alentours de la Rive-Sud de Montreal.</div>
+                    </details>
+                    <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Comment se déroule la première séance?<span class="text-gray-400">↓</span></summary>
+                        <div class="p-5 border-t text-gray-600 text-[14px]">La première rencontre est un moment d'accueil privilégié. Nous prendrons le temps de faire connaissance, d'explorer vos besoins et de définir ensemble vos objectifs. C'est un espace sans pression, conçu pour que vous puissiez évaluer si vous vous sentez à l'aise avec mon approche avant de poursuivre ce cheminement ensemble.</div>
+                    </details>
+                    <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
+                        <summary class="p-5 cursor-pointer flex justify-between font-medium">Est-ce confidentiel?<span class="text-gray-400">↓</span></summary>
+                        <div class="p-5 border-t text-gray-600 text-[14px]">Absolument. La confidentialité est protégée par le secret professionnel et mon code de déontologie. Vos informations ne sont jamais divulguées sans votre consentement, sauf cas d'urgence légale.</div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6">
+        <div class="absolute inset-0 bg-black/40 lg:hidden"></div>
+        <div class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div class="bg-white/95 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none p-8 lg:p-0 rounded-[40px] lg:rounded-none space-y-8">
+                <h2 class="text-3xl font-light text-gray-800">Avez-vous d'autres questions?</h2>
+                <p class="text-[16px] text-gray-700">Contactez-moi via <a href="mailto:contact@serenalockett.com" class="text-[#5E7161] underline font-medium">contact@serenalockett.com</a></p>
+                <div class="flex items-center gap-4 text-gray-400 py-2"><div class="flex-grow border-t border-gray-300"></div> OU <div class="flex-grow border-t border-gray-300"></div></div>
+                <form id="contactForm" class="space-y-4">
+                    <p class="text-gray-700 font-medium">Complétez le formulaire suivant:</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" id="prenom" placeholder="Prénom *" class="p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
+                        <input type="text" id="nom" placeholder="Nom *" class="p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
+                    </div>
+                    <input type="email" id="email" placeholder="Email *" class="w-full p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required>
+                    <textarea rows="5" id="message" placeholder="Message *" class="w-full p-3 bg-white border border-gray-200 lg:bg-gray-50 rounded-md outline-none" required></textarea>
+                    <button type="submit" id="submitBtn" class="bg-[#5E7161] text-white w-full py-3 rounded-full uppercase tracking-widest text-sm font-medium shadow-md transition-all">Envoyer</button>
+                    
+                    <div id="fallbackArea" class="hidden mt-6 p-6 bg-white border border-[#5E7161] rounded-[20px] text-center space-y-4">
+                        <p class="text-[#5E7161] text-sm">L'ouverture automatique a échoué. Vous pouvez :</p>
+                        <a id="forceLink" href="#" class="block bg-[#5E7161] text-white px-6 py-2 rounded-full text-sm uppercase tracking-widest hover:bg-[#4a5a4d] transition-all">Ouvrir mon application mail</a>
+                        <div class="flex items-center justify-center gap-2 pt-2 text-gray-700">
+                            <span class="text-sm">ou copier :</span>
+                            <button type="button" onclick="copyEmail()" class="flex items-center gap-2 group hover:text-[#5E7161] transition-all">
+                                <span id="emailText" class="font-medium underline underline-offset-4">contact@serenalockett.com</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                            </button>
+                        </div>
+                        <p id="copyFeedback" class="hidden text-[10px] text-green-700 font-bold uppercase tracking-widest">Adresse copiée!</p>
+                    </div>
+                </form>
+            </div>
+            <div class="hidden lg:block">
+                <img src="office-chairs.jpg" alt="Bureau" class="rounded-[40px] object-cover h-[650px] w-full shadow-sm sticky top-32">
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-12 border-t text-[10px] uppercase tracking-widest text-gray-400 bg-white px-6">
+        <p class="mb-3">©2026 SERENA LOCKETT, R.A. TOUS DROITS RÉSERVÉS.</p>
+        <div class="text-[8px] uppercase tracking-widest">
+            <a href="privacy.html" class="hover:text-[#5E7161]">POLITIQUE DE CONFIDENTIALITÉ</a>
+            <span class="mx-1 text-gray-300">|</span>
+            <a href="terms.html" class="hover:text-[#5E7161]">CONDITIONS D'UTILISATION</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleServiceCard(card) {
+            const isOpen = card.classList.toggle('is-open');
+            const label = card.querySelector('.toggle-label');
+            if (label) {
+                label.textContent = isOpen ? 'Réduire' : 'En savoir plus';
+            }
+        }
+
+        // Sequential fade-out then fade-in (prevents words from ever overlapping)
+        const sub1 = document.getElementById('subtitle-1');
+        const sub2 = document.getElementById('subtitle-2');
+        let showingFirst = true;
+
+        setInterval(() => {
+            const outgoing = showingFirst ? sub1 : sub2;
+            const incoming = showingFirst ? sub2 : sub1;
+
+            outgoing.classList.remove('subtitle-visible');
+            outgoing.classList.add('subtitle-hidden');
+
+            setTimeout(() => {
+                incoming.classList.remove('subtitle-hidden');
+                incoming.classList.add('subtitle-visible');
+            }, 460);
+
+            showingFirst = !showingFirst;
+        }, 3200);
+
+        const menuOpen = document.getElementById('menu-open');
+        const menuClose = document.getElementById('menu-close');
+        const mMenu = document.getElementById('mobile-menu');
+        menuOpen.onclick = () => mMenu.classList.add('open');
+        menuClose.onclick = () => mMenu.classList.remove('open');
+        document.querySelectorAll('.m-link').forEach(l => l.onclick = () => mMenu.classList.remove('open'));
+        
+        let lastScrollY = window.scrollY;
+        window.onscroll = () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                if (window.scrollY > lastScrollY) nav.classList.add('header-hidden');
+                else { nav.classList.remove('header-hidden'); nav.style.backgroundColor = "rgba(94, 113, 97, 0.8)"; }
+            } else { nav.classList.remove('header-hidden'); nav.style.backgroundColor = "rgba(94, 113, 97, 0.6)"; }
+            lastScrollY = window.scrollY;
+        };
+
+        function copyEmail() {
+            const email = "contact@serenalockett.com";
+            const tempInput = document.createElement("input");
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            const feedback = document.getElementById('copyFeedback');
+            feedback.classList.remove('hidden');
+            setTimeout(() => feedback.classList.add('hidden'), 2000);
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const prenom = document.getElementById('prenom').value;
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const subject = encodeURIComponent("Demande d'information - " + prenom + " " + nom);
+            const body = encodeURIComponent(message + "\n\n" + prenom + " " + nom + "\n" + email);
+            const mailtoLink = "mailto:contact@serenalockett.com?subject=" + subject + "&body=" + body;
+            
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = "Ouverture de votre courriel...";
+            btn.classList.add('opacity-50');
+
+            window.location.href = mailtoLink;
+
+            setTimeout(() => {
+                document.getElementById('fallbackArea').classList.remove('hidden');
+                document.getElementById('forceLink').href = mailtoLink;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
