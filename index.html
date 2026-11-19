@@ -26,14 +26,23 @@
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
 
-        /* Smooth cross-fade for rotating navbar subtitle */
+        /* Sequential fade-out then fade-in (zero overlap) */
         .subtitle-rotator {
             display: grid;
             align-items: center;
         }
         .subtitle-rotator span {
             grid-area: 1 / 1;
-            transition: opacity 0.7s ease-in-out;
+            transition: opacity 0.45s ease-in-out, transform 0.45s ease-in-out;
+        }
+        .subtitle-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .subtitle-hidden {
+            opacity: 0;
+            transform: translateY(3px);
+            pointer-events: none;
         }
 
         #contact { background-size: cover; background-position: center; position: relative; }
@@ -50,8 +59,8 @@
             <div class="whitespace-nowrap">
                 <div class="text-[18px] md:text-[22px] text-white leading-tight font-medium">Serena Lockett, R.A.</div>
                 <div class="subtitle-rotator text-[13px] md:text-[16px] text-white italic font-light">
-                    <span id="subtitle-1" class="opacity-100">Thérapeute en relation d'aide</span>
-                    <span id="subtitle-2" class="opacity-0 pointer-events-none">Accompagnement / coaching parental</span>
+                    <span id="subtitle-1" class="subtitle-visible">Thérapeute en relation d'aide</span>
+                    <span id="subtitle-2" class="subtitle-hidden">Accompagnement / coaching parental</span>
                 </div>
             </div>
         </div>
@@ -228,25 +237,25 @@
     </footer>
 
     <script>
-        // Smooth cross-fade rotation for navbar subtitle
+        // Sequential fade-out then fade-in (prevents words from ever overlapping)
         const sub1 = document.getElementById('subtitle-1');
         const sub2 = document.getElementById('subtitle-2');
         let showingFirst = true;
 
         setInterval(() => {
-            if (showingFirst) {
-                sub1.classList.remove('opacity-100');
-                sub1.classList.add('opacity-0');
-                sub2.classList.remove('opacity-0');
-                sub2.classList.add('opacity-100');
-            } else {
-                sub2.classList.remove('opacity-100');
-                sub2.classList.add('opacity-0');
-                sub1.classList.remove('opacity-0');
-                sub1.classList.add('opacity-100');
-            }
+            const outgoing = showingFirst ? sub1 : sub2;
+            const incoming = showingFirst ? sub2 : sub1;
+
+            outgoing.classList.remove('subtitle-visible');
+            outgoing.classList.add('subtitle-hidden');
+
+            setTimeout(() => {
+                incoming.classList.remove('subtitle-hidden');
+                incoming.classList.add('subtitle-visible');
+            }, 460);
+
             showingFirst = !showingFirst;
-        }, 2800);
+        }, 3200);
 
         const menuOpen = document.getElementById('menu-open');
         const menuClose = document.getElementById('menu-close');
