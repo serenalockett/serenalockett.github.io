@@ -58,6 +58,12 @@
             width: 50%;
             flex-shrink: 0;
         }
+        .toggle-chevron {
+            transition: transform 0.35s ease;
+        }
+        .service-card.is-open .toggle-chevron {
+            transform: rotate(180deg);
+        }
 
         #contact { background-size: cover; background-position: center; position: relative; }
         @media (max-width: 1023px) {
@@ -131,9 +137,9 @@
 
     <section id="services" class="bg-[#F9F9F7] py-24">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mb-12">
-                <h2 class="text-3xl font-light tracking-widest uppercase text-gray-500 text-left shrink-0">Services</h2>
-                <div class="text-[13px] md:text-[14px] text-gray-700 leading-snug">
+            <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-12">
+                <h2 class="text-3xl leading-none font-light tracking-widest uppercase text-gray-500 text-left shrink-0">Services</h2>
+                <div class="text-[12.5px] leading-[1.2] text-gray-700">
                     <p class="font-medium">Consultations en ligne partout au Québec</p>
                     <p class="italic text-gray-500">(Rencontres en présentiel possibles sur la Rive-Sud de Montréal, incluant Longueuil, Boucherville, Saint-Lambert et environs.)</p>
                 </div>
@@ -141,14 +147,16 @@
             
             <div class="bg-[#D9E3D6] p-8 md:p-10 rounded-[40px] mb-12">
                 <p class="mb-5 text-gray-800 text-lg">Mes services s'adressent aux parents qui désirent, entre autres:</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2.5 text-gray-700 text-[15px]">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2.5 text-gray-700 text-[14.5px]">
                     <ul class="space-y-2.5 list-disc pl-5">
                         <li>Favoriser un attachement sécurisant</li>
                         <li>Décoder les besoins affectifs de votre enfant</li>
-                        <li>Accompagner la régulation des émotions</li>
                     </ul>
                     <ul class="space-y-2.5 list-disc pl-5">
+                        <li>Accompagner la régulation des émotions</li>
                         <li>Renforcer l'estime de soi de votre enfant</li>
+                    </ul>
+                    <ul class="space-y-2.5 list-disc pl-5">
                         <li>Reconnaître vos forces dans votre rôle parental</li>
                         <li>Réparer le lien après un moment difficile</li>
                     </ul>
@@ -156,8 +164,8 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <!-- Card 1: Soutien familial (Sideways Slide) -->
-                <div onclick="toggleServiceCard(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleServiceCard(this);}" class="service-card relative overflow-hidden cursor-pointer bg-white h-[215px] rounded-2xl border border-gray-100 hover:border-[#5E7161]/40 shadow-sm transition-colors select-none">
+                <!-- Card 1: Soutien familial (Centered + Sideways Slide) -->
+                <div onclick="toggleServiceCard(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleServiceCard(this);}" class="service-card relative overflow-hidden cursor-pointer bg-white h-[230px] rounded-2xl border border-gray-100 hover:border-[#5E7161]/40 shadow-sm transition-colors select-none">
                     <!-- Top-left badge -->
                     <span class="absolute top-4 left-4 z-10 bg-[#D9E3D6] text-[#455648] text-[10px] font-medium uppercase tracking-wider px-3 py-1 rounded-full">
                         Reçus d'assurance disponibles
@@ -166,26 +174,21 @@
                     <!-- Top-right toggle button -->
                     <div class="absolute top-4 right-4 z-10 inline-flex items-center gap-1 text-[11px] uppercase tracking-widest text-gray-400 hover:text-[#5E7161] transition-colors">
                         <span class="toggle-label">En savoir plus</span>
-                        <span class="toggle-arrow text-sm leading-none">→</span>
+                        <svg class="w-3.5 h-3.5 toggle-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </div>
 
                     <!-- Sliding Track -->
                     <div class="service-track h-full">
-                        <!-- Slide 1: Title | Price on the left -->
-                        <div class="service-pane h-full flex items-center px-8 pt-6">
-                            <div class="flex items-center gap-5 text-left">
-                                <h4 class="font-medium text-lg md:text-xl text-gray-800">Soutien familial</h4>
-                                <span class="h-10 w-px bg-gray-200 shrink-0"></span>
-                                <div>
-                                    <p class="text-2xl md:text-3xl font-light text-[#5E7161] leading-none">70$ - 115$*</p>
-                                    <p class="text-[11px] text-gray-400 uppercase tracking-widest mt-1.5">50 - 80 min.</p>
-                                </div>
-                            </div>
+                        <!-- Slide 1: Centered Title, Price & Duration -->
+                        <div class="service-pane h-full flex flex-col items-center justify-center px-8 pt-6 text-center">
+                            <h4 class="font-medium text-lg text-gray-800">Soutien familial</h4>
+                            <p class="text-3xl font-light my-3 text-[#5E7161]">70$ - 115$*</p>
+                            <p class="text-xs text-gray-400 uppercase tracking-widest">50 - 80 min.</p>
                         </div>
 
                         <!-- Slide 2: Explanation -->
-                        <div class="service-pane h-full flex items-center px-8 pt-8">
-                            <div class="text-[13px] md:text-[14px] text-gray-600 leading-relaxed space-y-1.5 text-left">
+                        <div class="service-pane h-full flex items-center justify-center px-8 pt-8 text-center">
+                            <div class="text-[13.5px] md:text-[14px] text-gray-600 leading-relaxed space-y-2">
                                 <p>Offert <strong>en solo</strong> (70$* • 50 min.) ou <strong>en duo</strong> (115$* • 80 min.) pour vous accompagner de façon personnalisée face aux défis du quotidien et renforcer le lien parent-enfant.</p>
                                 <p class="text-xs text-gray-500 italic">Éligible aux reçus d'assurance en naturopathie (RITMA).</p>
                             </div>
@@ -193,31 +196,26 @@
                     </div>
                 </div>
 
-                <!-- Card 2: Programme COSP™ (Sideways Slide) -->
-                <div onclick="toggleServiceCard(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleServiceCard(this);}" class="service-card relative overflow-hidden cursor-pointer bg-white h-[215px] rounded-2xl border border-gray-100 hover:border-[#5E7161]/40 shadow-sm transition-colors select-none">
+                <!-- Card 2: Programme COSP™ (Centered + Sideways Slide) -->
+                <div onclick="toggleServiceCard(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleServiceCard(this);}" class="service-card relative overflow-hidden cursor-pointer bg-white h-[230px] rounded-2xl border border-gray-100 hover:border-[#5E7161]/40 shadow-sm transition-colors select-none">
                     <!-- Top-right toggle button -->
                     <div class="absolute top-4 right-4 z-10 inline-flex items-center gap-1 text-[11px] uppercase tracking-widest text-gray-400 hover:text-[#5E7161] transition-colors">
                         <span class="toggle-label">En savoir plus</span>
-                        <span class="toggle-arrow text-sm leading-none">→</span>
+                        <svg class="w-3.5 h-3.5 toggle-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </div>
 
                     <!-- Sliding Track -->
                     <div class="service-track h-full">
-                        <!-- Slide 1: Title | Price on the left -->
-                        <div class="service-pane h-full flex items-center px-8 pt-6">
-                            <div class="flex items-center gap-5 text-left">
-                                <h4 class="font-medium text-lg md:text-xl text-gray-800">Programme COSP™</h4>
-                                <span class="h-10 w-px bg-gray-200 shrink-0"></span>
-                                <div>
-                                    <p class="text-2xl md:text-3xl font-light text-[#5E7161] leading-none">35$*</p>
-                                    <p class="text-[11px] text-gray-400 uppercase tracking-widest mt-1.5 leading-snug">Pour chaque rencontre de 90 min.</p>
-                                </div>
-                            </div>
+                        <!-- Slide 1: Centered Title, Price & Duration -->
+                        <div class="service-pane h-full flex flex-col items-center justify-center px-8 pt-6 text-center">
+                            <h4 class="font-medium text-lg text-gray-800">Programme COSP™</h4>
+                            <p class="text-3xl font-light my-3 text-[#5E7161]">35$*</p>
+                            <p class="text-xs text-gray-400 uppercase tracking-widest">Pour chaque rencontre de 90 min.</p>
                         </div>
 
                         <!-- Slide 2: Explanation -->
-                        <div class="service-pane h-full flex items-center px-8 pt-8">
-                            <div class="text-[12.5px] md:text-[13.5px] text-gray-600 leading-snug space-y-1.5 text-left">
+                        <div class="service-pane h-full flex items-center justify-center px-8 pt-8 text-center">
+                            <div class="text-[12.5px] md:text-[13.5px] text-gray-600 leading-snug space-y-2">
                                 <p><strong>Atelier de groupe de 8 rencontres.</strong> Permet d’affiner son regard sur les comportements de l'enfant pour reconnaître ses besoins d’attachement, y répondre avec justesse et explorer ce qui peut freiner ces réponses.</p>
                                 <p class="text-[11px] text-gray-500 italic">Atelier éducatif (aucun reçu d'assurance émis).</p>
                             </div>
@@ -314,12 +312,8 @@
         function toggleServiceCard(card) {
             const isOpen = card.classList.toggle('is-open');
             const label = card.querySelector('.toggle-label');
-            const arrow = card.querySelector('.toggle-arrow');
             if (label) {
                 label.textContent = isOpen ? 'Retour' : 'En savoir plus';
-            }
-            if (arrow) {
-                arrow.textContent = isOpen ? '←' : '→';
             }
         }
 
