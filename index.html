@@ -45,6 +45,27 @@
             pointer-events: none;
         }
 
+        /* Smooth expandable drawer inside service cards (works on touch & desktop) */
+        .service-details {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        .service-card.is-open .service-details {
+            grid-template-rows: 1fr;
+            opacity: 1;
+        }
+        .service-details-inner {
+            overflow: hidden;
+        }
+        .service-chevron {
+            transition: transform 0.3s ease;
+        }
+        .service-card.is-open .service-chevron {
+            transform: rotate(180deg);
+        }
+
         #contact { background-size: cover; background-position: center; position: relative; }
         @media (max-width: 1023px) {
             #contact { background-image: url('office-chairs.jpg'); }
@@ -145,18 +166,67 @@
                 </div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 text-center">
-                <div class="bg-white p-10 rounded-2xl border border-gray-50 shadow-sm">
-                    <h4 class="font-medium text-gray-800">Thérapie individuelle</h4>
-                    <p class="text-3xl font-light my-4 text-[#5E7161]">70$*</p>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest">50 min.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 items-start">
+                <!-- Card 1: Accompagnement parental -->
+                <div onclick="toggleServiceCard(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleServiceCard(this);}" class="service-card cursor-pointer bg-white p-8 md:p-10 rounded-2xl border border-gray-100 hover:border-[#5E7161]/40 shadow-sm transition-all text-center select-none">
+                    <h4 class="font-medium text-lg text-gray-800">Accompagnement parental</h4>
+                    
+                    <div class="flex items-center justify-center gap-6 my-5">
+                        <div>
+                            <p class="text-3xl font-light text-[#5E7161]">70$*</p>
+                            <p class="text-[11px] text-gray-400 uppercase tracking-widest mt-1">50 min. • Solo</p>
+                        </div>
+                        <div class="h-10 w-px bg-gray-200"></div>
+                        <div>
+                            <p class="text-3xl font-light text-[#5E7161]">115$*</p>
+                            <p class="text-[11px] text-gray-400 uppercase tracking-widest mt-1">80 min. • Duo</p>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-[#5E7161] font-medium mb-4">Reçus d'assurance disponibles (RITMA)</p>
+
+                    <div class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-gray-400 hover:text-[#5E7161] transition-colors">
+                        <span class="toggle-label">En savoir plus</span>
+                        <svg class="w-3.5 h-3.5 service-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
+
+                    <div class="service-details text-left">
+                        <div class="service-details-inner">
+                            <div class="pt-5 mt-5 border-t border-gray-100 text-[14px] text-gray-600 leading-relaxed space-y-2">
+                                <p>Un espace personnalisé, en individuel ou en duo parental, pour explorer vos défis quotidiens, comprendre les besoins émotionnels de votre enfant et renforcer votre lien d'attachement à votre rythme.</p>
+                                <p class="text-xs text-gray-500 italic">Éligible aux reçus d'assurance en naturopathie (RITMA).</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-10 rounded-2xl border border-gray-50 shadow-sm">
-                    <h4 class="font-medium text-gray-800">Thérapie de couple</h4>
-                    <p class="text-3xl font-light my-4 text-[#5E7161]">115$*</p>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest">80 min.</p>
+
+                <!-- Card 2: Programme COSP -->
+                <div onclick="toggleServiceCard(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleServiceCard(this);}" class="service-card cursor-pointer bg-white p-8 md:p-10 rounded-2xl border border-gray-100 hover:border-[#5E7161]/40 shadow-sm transition-all text-center select-none">
+                    <h4 class="font-medium text-lg text-gray-800">Programme COSP</h4>
+                    
+                    <div class="my-5">
+                        <p class="text-3xl font-light text-[#5E7161]">35$* <span class="text-base text-gray-400">/ séance</span></p>
+                        <p class="text-[11px] text-gray-400 uppercase tracking-widest mt-1">8 rencontres de 90 min. • Groupe</p>
+                    </div>
+
+                    <p class="text-xs text-gray-500 font-medium mb-4">Atelier éducatif • Sans reçu d'assurance</p>
+
+                    <div class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-gray-400 hover:text-[#5E7161] transition-colors">
+                        <span class="toggle-label">En savoir plus</span>
+                        <svg class="w-3.5 h-3.5 service-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
+
+                    <div class="service-details text-left">
+                        <div class="service-details-inner">
+                            <div class="pt-5 mt-5 border-t border-gray-100 text-[14px] text-gray-600 leading-relaxed space-y-2">
+                                <p>Un parcours en petit groupe basé sur le programme <em>Cercle de sécurité parentale™</em> pour décoder les besoins d'attachement de votre enfant et gagner en confiance dans votre rôle parental.</p>
+                                <p class="text-xs text-gray-500 italic">Note : Puisqu'il s'agit d'un atelier éducatif de groupe et non d'une séance de thérapie, aucun reçu d'assurance ne peut être émis pour ce programme.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <p class="text-center italic text-gray-600 mb-20 text-[14px]">
                 * Tarification solidaire disponible. Si l'aspect financier est une source d’inquiétude pour vous, contactez-moi et nous trouverons ensemble une solution adaptée à votre réalité.
             </p>
@@ -166,7 +236,7 @@
                 <div class="space-y-4">
                     <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
                         <summary class="p-5 cursor-pointer flex justify-between font-medium">Émettez-vous des reçus pour les assurances?<span class="text-gray-400">↓</span></summary>
-                        <div class="p-5 border-t text-gray-600 text-[14px]">Absolument. En tant que membre de l'association RITMA, mes services sont reconnus par la majorité des compagnies d'assurance et sont généralement remboursés sous la catégorie « naturopathie ». Notez cependant que la compagnie Industrielle Alliance ne rembourse pas ce type de reçu spécifique, il est donc conseillé de vérifier votre couverture au préalable.</div>
+                        <div class="p-5 border-t text-gray-600 text-[14px]">Oui, pour les séances d'accompagnement parental en solo ou en duo. En tant que membre de l'association RITMA, mes services individuels sont reconnus par la majorité des compagnies d'assurance sous la catégorie « naturopathie » (à l'exception d'Industrielle Alliance). Toutefois, aucun reçu d'assurance n'est émis pour le Programme COSP en groupe, celui-ci étant un atelier éducatif.</div>
                     </details>
                     <details name="faq-group" class="faq-item group bg-white border border-gray-100 rounded-lg">
                         <summary class="p-5 cursor-pointer flex justify-between font-medium">Quelles sont les modalités de paiement?<span class="text-gray-400">↓</span></summary>
@@ -242,6 +312,15 @@
     </footer>
 
     <script>
+        // Expandable service cards (works seamlessly on both mobile tap and desktop click)
+        function toggleServiceCard(card) {
+            const isOpen = card.classList.toggle('is-open');
+            const label = card.querySelector('.toggle-label');
+            if (label) {
+                label.textContent = isOpen ? 'Réduire' : 'En savoir plus';
+            }
+        }
+
         // Sequential fade-out then fade-in (prevents words from ever overlapping)
         const sub1 = document.getElementById('subtitle-1');
         const sub2 = document.getElementById('subtitle-2');
